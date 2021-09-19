@@ -1,0 +1,58 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{report}
+
+\usepackage[english]{babel}
+\usepackage{lipsum}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{tikzducks}
+\usepackage{pgfplots}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec, blindtext, color}
+
+\definecolor{gray75}{gray}{0.75}
+\newcommand{\hsp}{\hspace{20pt}}
+\titleformat{\chapter}[hang]{\Large\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Large\bfseries}
+
+\begin{document}
+
+
+
+{\LARGE Literature Review}
+
+% +----------------+
+% |    QUELLE 1    |
+% +----------------+
+
+{\let\clearpage\relax \chapter{Quelle 1}}
+\noindent
+\textbf{Autor*innen:} Max Muster\\
+\textbf{Referenztyp:} Artikel\\
+\textbf{Jahr:} 1843\\
+\textbf{Journal / Herausgeber:}\\
+\textbf{doi / ISBN:}\\\\
+\textbf{Zusammenfassung und Vernetzung:}\\
+...\\
+
+% +----------------+
+% |    QUELLE 2    |
+% +----------------+
+
+{\let\clearpage\relax \chapter{Quelle 2}}
+\noindent
+\textbf{Autor*innen:} Max Muster\\
+\textbf{Referenztyp:} Artikel\\
+\textbf{Jahr:} 1843\\
+\textbf{Journal / Herausgeber:}\\
+\textbf{doi / ISBN:}\\\\
+\textbf{Zusammenfassung und Vernetzung:}\\
+...\\
+
+
+
+\end{document}
