@@ -1,0 +1,34 @@
+\chapter{This is a chapter}
+
+\section{This is a section}
+
+\subsection{This is a subsection}
+
+\subsubsection{This is a subsubsection}
+
+\paragraph{This is a paragraph}
+You can write some text here...\\
+
+\begin{minipage}{0.5 \textwidth}
+    This is a minipage!
+\end{minipage}
+\begin{minipage}{0.5 \textwidth}
+    This is a minipage!
+\end{minipage}
+
+\begin{filecontents}{interactions_sus.dat}
+	27 65
+	31 62.5
+	54 37.5
+	39 72.5
+	52 55
+\end{filecontents}
+
+\begin{figure}[H] \centering
+	\begin{tikzpicture}
+		\begin{axis}[ylabel=SUS, xlabel=Interactions]
+			\addplot[only marks,orange] table[x index=0, y index=1] {interactions_sus.dat};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Plot Interactions - SUS}
+\end{figure}

@@ -1,0 +1,106 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{report}
+
+\usepackage[english]{babel}
+\usepackage{lipsum}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{tikzducks}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.8}
+\usepgfplotslibrary{statistics}
+
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+
+\definecolor{gray75}{gray}{0.75}
+\definecolor{color1}{gray}{1}
+\definecolor{color2}{gray}{0.75}
+
+\newcommand{\todoDuck}
+{
+\begin{flushright}
+	\begin{tikzpicture}[overlay, xshift=0cm]
+	\duck[body=yellow!80!brown!80!white,crazyhair=gray!60!white,eyebrow,glasses=red!70!black,book=\scalebox{1.2}{},bookcolour=red!20!brown,think={TODO!},bubblecolour=cyan!20!white,laughing]
+	\end{tikzpicture}
+\end{flushright}
+}
+
+%----------------------------------------------------------------------------------------
+%	HYPERLINKS
+%----------------------------------------------------------------------------------------
+
+\usepackage{hyperref} % Required for hyperlinks
+
+\hypersetup{
+  colorlinks   = true,    % Colours links instead of ugly boxes
+  urlcolor     = blue,    % Colour for external hyperlinks
+  linkcolor    = blue,    % Colour of internal links
+  citecolor    = red      % Colour of citations
+}
+
+
+\begin{document}
+
+\newcommand{\thetitle}{ESP32 WiFi}
+\newcommand{\thesubtitle}{Integratives Gesamtprojekt}
+\newcommand{\thedate}{2021-07-16}
+\newcommand{\theauthor}{Rauter, Waldner, Widmann}
+
+\title{\thetitle}
+\date{\thedate}
+\author{\theauthor}
+		
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+            
+        \Huge
+        \textbf{\thetitle}
+            
+        \vspace{0.5cm}
+        \LARGE
+		\thesubtitle
+            
+        \vspace{0.5cm}
+            
+        \textbf{\theauthor}
+            
+        \vfill
+            
+        %\includegraphics[width=0.4\textwidth]{Figures/suunto9.png}
+        
+		\vfill
+
+        \Large
+		TITLE\\
+		\vspace{0.5cm}
+        Digital Business \& Software Engineering\\
+		\vspace{0.5cm}
+        MCI Management Center Innsbruck\\
+		\vspace{0.5cm}
+        \thedate
+            
+    \end{center}
+\end{titlepage}
+
+\tableofcontents
+
+
+% Add new stuff to the document by including the correspoding .tex file...
+\include{dummy_chapter.tex}
+
+
+
+%----------------------------------------------------------------------------------------
+%	CITE
+%----------------------------------------------------------------------------------------
+
+\bibliographystyle{apalike}
+\bibliography{sample}
+
+\end{document}
