@@ -53,6 +53,48 @@
 \textbf{Zusammenfassung und Vernetzung:}\\
 ...\\
 
+% +----------------+
+% |    QUELLE 3    |
+% +----------------+
 
+{\let\clearpage\relax \chapter{Is WiFi suitable for energy efficient IoT deployments? A performance study}}
+\noindent
+\textbf{Autor*innen:} Max Muster\\
+\textbf{Referenztyp:} Artikel\\
+\textbf{Jahr:} 1843\\
+\textbf{Journal / Herausgeber:}\\
+\textbf{doi / ISBN:}\\\\
+\textbf{Zusammenfassung und Vernetzung:}\\
+Die Verfasser der Studie haben die Performance von WLAN im Bezug auf die Energieeffizienz untersucht.
+Dabei wurden Experimente mit der WLAN fähigen MCU ESP-12 durchgeführt.
+Untersucht wurden wie sich unterschiedliche Batterietypen, Authentifizierungsmethoden und Schlafzyklen
+auf den Energieverbrauch auswirken. Die Authoren gehen auf die grundlegende Idee von Schlafmodi bei MCUs ein
+und analysieren dabei, ob auch unterschiedliche Schlafzyklen Auswirkung auf die Laufzeit der Batterie haben.
+Des weiteren wird beschrieben, dass der Verbindungsaufbau inklusive Authentifizierung im Vergleich zu anderen 
+Technologien wie Zigbee, BLE oder LoRaWAN sehr viel Zeit und damit Energie beansprucht.
+Dies ist eine wichtige Erkenntniss, da beim Senden und Empfangen am Meisten Energie verbraucht wird.
+\\
+\\
+Die durchgeführen Tests kamen zu folgenden Ergebnissen:\\
+\paragraph{Batterietyp} Dabei wurden drei verschiedene Batterietypen untersucht:
+\begin{itemize}
+    \item Alkaline
+    \item NiMH
+    \item Li-Po
+\end{itemize}
+Das Experiment zeigte, dass der Batterietyp nur wenig Einfluss auf die Laufzeit einwirkt. Es zeigte lediglich, dass die verschiedenen Batterietypen unterschiedliche Entladekurven aufweisten.
+
+\paragraph{Authentifizierung} Dabei wurden drei unterschiedliche Authentifizierungsmethoden untersucht:
+\begin{itemize}
+    \item Keine
+    \item WEP
+    \item WPA2
+\end{itemize}
+Dabei kam hervor, dass WPA2 am Meisten Energie benötigt. WEP und Keine Authentifizierung liegen etwa beim gleichen Verbrauch.
+
+\paragraph{Schlafzyklus} Hierbei wurden unterschiedliche Zykluszeiten analysiert.
+Das Experiment lieferte das Ergebniss, dass die Zykluszeit keine Auswirkung auf die Laufzeit hat.
+
+\paragraph{Vernetzung} Dieser Artikel liefert uns eine sehr wichtige Basis über unseren Forschungsbereich. Bezüglich der Authentifizierungsmethoden ist jedoch festzuhalten, dass Keine Authentifizierung oder ein WEP Verschlüsselung keinen Schutz gegen Angriffe von Außen bieten.
 
 \end{document}
