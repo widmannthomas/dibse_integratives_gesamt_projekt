@@ -97,4 +97,100 @@ Das Experiment lieferte das Ergebniss, dass die Zykluszeit keine Auswirkung auf 
 
 \paragraph{Vernetzung} Dieser Artikel liefert uns eine sehr wichtige Basis über unseren Forschungsbereich. Bezüglich der Authentifizierungsmethoden ist jedoch festzuhalten, dass Keine Authentifizierung oder ein WEP Verschlüsselung keinen Schutz gegen Angriffe von Außen bieten.
 
+{\let\clearpage\relax \chapter{Assessing the ESP8266 WiFi module for the Internet of Things}}
+\noindent
+\textbf{Autor*innen:} J. Mesquita, D. Guimarães, C. Pereira, F. Santos and L. Almeida\\
+\textbf{Referenztyp:} Conference Paper\\
+\textbf{Jahr:} 2018\\
+\textbf{Journal / Herausgeber:} IEEE\\
+\textbf{doi / ISBN:} 10.1109/ETFA.2018.8502562\\\\
+\textbf{Zusammenfassung und Vernetzung:}\\
+The authors of this article show the ESP8266 and if it's suitable as a battery-powered IoT device with Wi-Fi connectivity.
+They explain the different sleep modes and conduct experiments using them in different contexts.\\\\
+The 3 different sleep modes the ESP8266 has, are:\\
+\paragraph{Modem-sleep:} Is used for applications that need real-time CPU control. The Wi-Fi module is turned off but every other component remains on. The connection to the AP remains. When waking up, the connection doesn't need to be reestablished and because of that, the latency is minimized.
+\paragraph{Light-sleep:} Is used for applications that need less or partially CPU control. The Wi-Fi module and the system clock is turned off. The connection to the AP remains.
+\paragraph{Deep-sleep:} This mode has to be called explicitely by the programmer ans is used for applications that process data in large time-intervals. Everything is turned off except the real-time-clock (RTC). When waking up, the connection to the AP has to be reestablished.\\\\
+The experiments show that:
+\paragraph{Beacon interval and DTIM interval:} 
+In Modem-sleep mode, the energy consupmtion is decreased by increasing the beacon interval or the DTIM interval. When the beacon interval is greater than 700ms, the energy consumption in light-sleep mode nearly equals the energy consumption in modem-sleep mode.
+\paragraph{Multicast transmissions:}
+In scenarios based on multicast transmissions, the energy consumption is way higher than in scenarios without multicast. The ESP8266 wakes up more frequently, is awake much longer and therefore consumes more energy.
+\paragraph{Impact of data transmission:}
+In one case, 85B are sent every second and in the other case 850B are sent every ten seconds for each power-mode.
+\begin{itemize}
+        \item Active: No difference in battery lifetime
+        \item Modem-sleep: 14\% more lifetime when sending 850B every ten seconds.
+        \item Light-sleep: 44\% more lifetime when sending 850B every ten seconds
+        \item Deep-sleep: Not possible to send data every second due to connection reestablishement on waking up.
+    \end{itemize}
+\paragraph{Vernetzung:}
+This article is relevant because we want so optimize the battery-lifetime of our ESP8266 and this paper shows us the different sleep-modes and the corresponding impact on the energy-consumption. This is fundamental, when we want to optimize the battery-lifetime of our Wi-Fi sensor.
+
+
+{\let\clearpage\relax \chapter{Internet of things with ESP8266: build amazing internet of things projects using the ESP8266 Wi-Fi chip}}
+\noindent
+\textbf{Autor*innen:} Schwartz,
+Marco\\
+\textbf{Referenztyp:} Book\\
+\textbf{Jahr:} 2016\\
+\textbf{Journal / Herausgeber:} Packt\\
+\textbf{doi / ISBN:} 978-1-78646-802-4\\\\
+\textbf{Zusammenfassung und Vernetzung:}\\
+The author of this book gives a deep insight on the capabilities of the ESPP8266. He shows how to choose the right version of it and what the advantages and disadvantages of those different versions are. Instructions on how to install the IDE are given. In addition to that, this book offers a wide variety of sample-programs and gives an insight on what the ESP8266 is capable of. Tutorials on how to read data from sensors and how to connect it to the Wi-Fi network are given. It also teaches, how to enable machine-to-machine communication. Example code for the different project are available. The ESP8266 is a low cost microcontroller. It has a 32-bit CPU, so it's a SoC and can work without additional hardware. It can directly connect to the internet with it's built in Wi-Fi module and is fairly easy to program with the Arduino IDE. There are multiple versions of the ESP8266 available. Each of it has more funcionality built into it, which makes it very flexible and suitable for almost every usecase. The ESP8266 is available for about 5\$. Because of the features and the low cost, this device is one of the most popular IoT devices available on the market. To program the ESP8266, the Arduino IDE is used.\\
+\paragraph{Vernetzung:} This book is the fundament to work with the ESP8266. It includes everything someone needs to know when working with this IoT device and for us it is the starting point on working with this device. We are making a prototype for this project and this book covers everything we need to know to realize it.
+
+
+{\let\clearpage\relax \chapter{MQTT based Home Automation System Using
+ESP8266}}
+\noindent
+\textbf{Autor*innen:} R. K. Kodali and S. Soratkal\\
+\textbf{Referenztyp:} Conference Paper\\
+\textbf{Jahr:} 2016\\
+\textbf{Journal / Herausgeber:} IEEE\\
+\textbf{doi / ISBN:} 10.1109/R10-HTC.2016.7906845\\\\
+\textbf{Zusammenfassung und Vernetzung:}\\
+The authors of this article show the need of an energy-saving communication protocol for battery-powered IoT devices like the ESP8266.
+They show the functionality of MQTT, how it works and give recommendations on what IDE to use for the ESP8266 as MQTT-client and what programs to use as an MQTT-broker.\\
+\begin{itemize}
+    \item MQTT works with the publish/subscribe pattern. Every device, that sends and receives messages over MQTT is called an MQTT-client. Such device can either be publisher or subscriber.
+    \item A publisher sends data on a given topic to the MQTT-broker and a subscriber subscribes to one or more topics and receives those messages.
+    \item The MQTT-broker forwards messages to the right subscribers. Every topic has a name and a level, that depends on the name of the topic.
+    \item Publisher and subscriber are isolated from each other.
+    \item Establish connection: MQTT-client sends CONNECT packet. Broker responds with CONNACK packet, that contains a code, that informs about the status of the connection.
+    \item Subscribe: MQTT-client sends SUBSCRIBE packet with an UTF-8 encoded topic-name. The broker responds with a SUBACK packet.
+    \item Publish: MQTT-client sends PUBLISH packet with the topic-name, the message and the QoS.level. MQTT supports 3 QoS-levels
+    \item Disconnect: MQTT-client sends DISCONNECT packet and the connection is cut without a response from the broker.
+    \item The connection between the client and the broker is cut on a given time interval. To prevent this, the client has to send a PINGREQ packet to the broker to signal, that he is still there. The broker responds with a PINGRESP packet.
+    \item To program the ESP8266 as an MQTT-client, the Arduino IDE is recommended and as an MQTT-broker, moquitto is suitable. The URL to the MQTT-broker is the IP-adress of it with the port 1883. To display and send or receive messages on a device it's recommended to use MQTTLens on PC and MyMQTT on android  based smartphones.
+\end{itemize}
+\paragraph{Vernetzung:}
+When using Wi-Fi with IoT, a communication protocol is inevitable. Because the IoT device is battery-powered, a communication protocol with low energy consumption is key. MQTT suits this requirement. This paper describes how to use this protocol and that's needed for us.
+
+
+{\let\clearpage\relax \chapter{Power Consumption Analysis of a Wi-Fi-based IoT Device}}
+\noindent
+\textbf{Autor*innen:} Yüksel ME\\
+\textbf{Referenztyp:} Journal Article\\
+\textbf{Jahr:} 2020\\
+\textbf{Journal / Herausgeber:} Electrica\\
+\textbf{doi / ISBN:} 10.5152/electrica.2020.19081\\\\
+\textbf{Zusammenfassung und Vernetzung:}\\
+The authors of this article analyse the power consumption of battery-powered IoT devices and how to optimize it. They use an ESP32 for it, which has the ESP8266 installed. They analyzed options on how to increase the battery-lifetime when using the build-in sleep-modes and changing how the ESP32 communicates with the given network.\\
+\paragraph{They came to the following conclusions:}
+\begin{itemize}
+    \item When deciding either to go on deep-sleep or modem-sleep, the time-interval between two transmissions plays a huge role. When setting the transmission period to 1 minute, the modem-sleep mode consumes less energy than the deep-sleep mode because of the need to wake up and completely reestablish the connection. When setting the interval to 3 minutes and more, the opposite is the case.
+    \item Using UDP instead of TCP helps reducing the energy consumption (by about 14\%). But UDP doesn't provide flow control, so packets can be lost and it's not an effective solution.
+    \item Using a static IP address rather than using DHCP saves energy because of the overhead, DHCP brings. Longer DHCP leases can also lead to less energy consumption.
+    \item The workload on the router and the server can have a huge impact on the connection time and the required energy.  
+    \item It's not always the best way to use low-power modes. It depends on the application. 
+    \item When uploading data, the data rate can play a role on energy consumption. They show, that at a rate more than 11Mbps, the energy consumption very slowly decreases and it doesn't have a mentionable impact whether there are 140B or 260B to transmit. At a rate less than 11Mbps, the energy consumption fastly decreases and it the size of the packets has a relative high impact.
+\end{itemize} 
+\paragraph{Vernetzung:}
+It's good to know, what sleep-modes we can work with, but it's more important to know, when to use them and how much energy we save. Also it's essential to know, where we can save energy on the network-layer and what uses much energy.
+
+
+
+
+
 \end{document}
