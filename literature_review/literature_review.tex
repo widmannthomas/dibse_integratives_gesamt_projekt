@@ -65,37 +65,108 @@
 \textbf{Journal / Herausgeber:}\\
 \textbf{doi / ISBN:}\\\\
 \textbf{Zusammenfassung und Vernetzung:}\\
-Die Verfasser der Studie haben die Performance von WLAN im Bezug auf die Energieeffizienz untersucht.
-Dabei wurden Experimente mit der WLAN fähigen MCU ESP-12 durchgeführt.
-Untersucht wurden wie sich unterschiedliche Batterietypen, Authentifizierungsmethoden und Schlafzyklen
-auf den Energieverbrauch auswirken. Die Authoren gehen auf die grundlegende Idee von Schlafmodi bei MCUs ein
-und analysieren dabei, ob auch unterschiedliche Schlafzyklen Auswirkung auf die Laufzeit der Batterie haben.
-Des weiteren wird beschrieben, dass der Verbindungsaufbau inklusive Authentifizierung im Vergleich zu anderen 
-Technologien wie Zigbee, BLE oder LoRaWAN sehr viel Zeit und damit Energie beansprucht.
-Dies ist eine wichtige Erkenntniss, da beim Senden und Empfangen am Meisten Energie verbraucht wird.
+The author of this study analyzed the performance of WiFi in terms of energy efficiency.
+Therefor some experiments were made with the ESP-12 which is a WiFi capable MCU.
+Specially the impact of battery types, authentication mode and deep sleep cycles on the energy consumption was investigated.
+Furthermore, the author described the basic idea behind the different sleep modes of the MCU.
+By using the capability of setting the MCU into deep sleep, the author investigated the impact of different
+sleep intervals on the power consumption. 
+The analyzes of the resulting data show that the establishment and authentication of the connection to the access point takes much more
+energy than just sending the data. Other technologies like Zigbee, BLE or LoRaWAN are using a different connection method that requires much less energy.
+The analyzes also show that, in addition to establishing the connection, the MCU also requires a lot of energy to transmit and receive data.
+This is the main reason why it is so important to keep the wake up (operation) time as short as possible.
 \\
 \\
-Die durchgeführen Tests kamen zu folgenden Ergebnissen:\\
-\paragraph{Batterietyp} Dabei wurden drei verschiedene Batterietypen untersucht:
+The different experiments came to the following results:\\
+\paragraph{Battery} (Three different types of batteries were analyzed.):
 \begin{itemize}
     \item Alkaline
     \item NiMH
     \item Li-Po
 \end{itemize}
-Das Experiment zeigte, dass der Batterietyp nur wenig Einfluss auf die Laufzeit einwirkt. Es zeigte lediglich, dass die verschiedenen Batterietypen unterschiedliche Entladekurven aufweisten.
+The result of this experiment shows that the type of the battery doesn't influence the battery life much.
+It is worth mentioning that the different battery types have different discharge curves.
 
-\paragraph{Authentifizierung} Dabei wurden drei unterschiedliche Authentifizierungsmethoden untersucht:
+\paragraph{Authentication} (Three different types of authentication were analyzed.):
 \begin{itemize}
-    \item Keine
+    \item No authentication
     \item WEP
     \item WPA2
 \end{itemize}
-Dabei kam hervor, dass WPA2 am Meisten Energie benötigt. WEP und Keine Authentifizierung liegen etwa beim gleichen Verbrauch.
+The result shows that WPA2 needs the most energy. WEP and no authentication are about the same.
+However, WPA2 is strongly recommended for security reasons.
 
-\paragraph{Schlafzyklus} Hierbei wurden unterschiedliche Zykluszeiten analysiert.
-Das Experiment lieferte das Ergebniss, dass die Zykluszeit keine Auswirkung auf die Laufzeit hat.
+\paragraph{Deep sleep cycle} (Different sleep cycles were analyzed.)
+The result shows that there is no impact on the battery life.
+\\\\
+\textbf{Importance of this paper:}
+\\\\
+This paper provides the fundamental ideas behind the sleep modes of MCUs.
 
-\paragraph{Vernetzung} Dieser Artikel liefert uns eine sehr wichtige Basis über unseren Forschungsbereich. Bezüglich der Authentifizierungsmethoden ist jedoch festzuhalten, dass Keine Authentifizierung oder ein WEP Verschlüsselung keinen Schutz gegen Angriffe von Außen bieten.
+
+
+
+% +----------------+
+% |    QUELLE 4    |
+% +----------------+
+
+{\let\clearpage\relax \chapter{RSSI Comparison of ESP8266}}
+\noindent
+\textbf{Autor*innen:} Max Muster\\
+\textbf{Referenztyp:} Artikel\\
+\textbf{Jahr:} 1843\\
+\textbf{Journal / Herausgeber:}\\
+\textbf{doi / ISBN:}\\\\
+\textbf{Zusammenfassung und Vernetzung:}\\
+In this paper, different ESP8266 modules with different types of antennas have been analyzed.
+The type of the antenna affects the RSSI (received signal strength indicator) which is an indicator of the signal strength.
+The weaker the signal strength is, the more power is used to transmit data.
+That means that the battery life might depend on the signal strength.
+\\
+The authors of this paper have chosen the ESP8266 module because of it's popularity and it's low price tag.
+\\\\
+Four different with four different antenna types have been analyzed:\\
+\begin{itemize}
+    \item \textbf{Model A:} meandered PCB antenna
+    \item \textbf{Model B:} inverted-F PCB antenna
+    \item \textbf{Model C:} ceramic antenna
+    \item \textbf{Model D:} external dipole antenna
+\end{itemize}
+
+In the experiment, the RSSI was measured at different distances (20m, 30m and 40m).
+As expected, the model with the dipole (model D) performed best. Followed by C, A and B.
+\\\\
+However, the size of a dipole antenna can be a problem in IoT use cases because one goal is often to keep the device small.
+\\\\
+\textbf{Importance of this paper:}
+\\\\
+The knowledge that the power consumption correlates with the signal strength is important to optimize the battery life.
+As mentioned, one way to improve the signal strength is to use larger antennas. However, this is not always acceptable.
+If an external dipole antenna is not acceptable, a ceramic antenna is preferred over a PCB antenna.
+
+
+% +----------------+
+% |    QUELLE 5    |
+% +----------------+
+
+{\let\clearpage\relax \chapter{How DHCP Leases Meet Smart Terminals: Emulation and Modeling}}
+\noindent
+\textbf{Autor*innen:} Max Muster\\
+\textbf{Referenztyp:} Artikel\\
+\textbf{Jahr:} 1843\\
+\textbf{Journal / Herausgeber:}\\
+\textbf{doi / ISBN:}\\\\
+\textbf{Zusammenfassung und Vernetzung:}\\
+In this paper the basic principle of DHCP (Dynamic Host Configuration Protocol) is described. 
+DHCP is used to automatically configure clients in a network. 
+It allows to automatically assign IP addresses to new clients in a network as well as configuring the subnetmask, dns, default gateway and many more parameters.
+The basic idea of DHCP is, that there is a central device in the network called DHCP server that manages a pool of IP addresses.
+Once a device is connected to a network, it sends a DHCP request as a broadcast into the network. 
+The DHCP server than answers this requests with the defined network configuration and an IP address together with a lease time.
+The lease time defines how long the client is allowed to use the address. After this period of time, the client has to send a new request. 
+Normally this happens after the half of the lease time.
+The author of this paper analyzes the impact of different lease times on network overhead.
+
 
 {\let\clearpage\relax \chapter{Assessing the ESP8266 WiFi module for the Internet of Things}}
 \noindent
