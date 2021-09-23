@@ -157,15 +157,23 @@ If an external dipole antenna is not acceptable, a ceramic antenna is preferred 
 \textbf{Journal / Herausgeber:}\\
 \textbf{doi / ISBN:}\\\\
 \textbf{Zusammenfassung und Vernetzung:}\\
-In this paper the basic principle of DHCP (Dynamic Host Configuration Protocol) is described. 
+In this paper, the basic principles of DHCP (Dynamic Host Configuration Protocol) are described. 
 DHCP is used to automatically configure clients in a network. 
-It allows to automatically assign IP addresses to new clients in a network as well as configuring the subnetmask, dns, default gateway and many more parameters.
+It allows to automatically assign IP addresses to new clients in a network as well as configuring the subnetmask, dns server, default gateway and many more parameters.
 The basic idea of DHCP is, that there is a central device in the network called DHCP server that manages a pool of IP addresses.
 Once a device is connected to a network, it sends a DHCP request as a broadcast into the network. 
-The DHCP server than answers this requests with the defined network configuration and an IP address together with a lease time.
+The DHCP server answers the request with the defined network configuration and an IP address together with a lease time.
 The lease time defines how long the client is allowed to use the address. After this period of time, the client has to send a new request. 
 Normally this happens after the half of the lease time.
 The author of this paper analyzes the impact of different lease times on network overhead.
+\\\\
+\textbf{Importance of this paper:}
+\\\\
+Also IoT sensors need an IP address to communicate for example with a MQTT broker or other devices in the network.
+Every time the sensor wakes up from its deep sleep mode, it reconnects to the associated WiFi network and sends a DHCP request to get an IP address.
+The process of getting a valid IP address takes energy. It would for sure make sense to improve this process. 
+An idea would be to detect the type of the device by its MAC address and use a longer lease time. This would also require to store the previous IP configuration on a not volatile storage during the deep sleep phase.
+
 
 
 {\let\clearpage\relax \chapter{Assessing the ESP8266 WiFi module for the Internet of Things}}
