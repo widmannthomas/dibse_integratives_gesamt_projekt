@@ -51,7 +51,7 @@
     \textbf{Autor*innen:} \citeauthor{#1} \\
     \textbf{Referenztyp:} Book\\
     \textbf{Jahr:} \citeyear{#1} \\
-    \textbf{Journal / Herausgeber:} \citefield{#1}{publisher}\\
+    \textbf{Journal / Herausgeber:} \citelist{#1}{publisher}\\
     \textbf{doi / ISBN:} \citefield{#1}{isbn} \\\\
     \textbf{Summary:}\\
 }
@@ -100,9 +100,8 @@ However, WPA2 is strongly recommended for security reasons.
 
 \paragraph{Deep sleep cycle} (Different sleep cycles were analyzed.)
 The result shows that there is no impact on the battery life.
-\\\\
-\textbf{Importance of this paper:}
-\\\\
+\\
+\paragraph{Importance of this paper:}
 This paper provides the fundamental ideas behind the sleep modes of MCUs.
 
 
@@ -132,9 +131,8 @@ In the experiment, the RSSI was measured at different distances (20m, 30m and 40
 As expected, the model with the dipole (model D) performed best. Followed by C, A and B.
 \\\\
 However, the size of a dipole antenna can be a problem in IoT use cases because one goal is often to keep the device small.
-\\\\
-\textbf{Importance of this paper:}
-\\\\
+\\
+\paragraph{Importance of this paper:}
 The knowledge that the power consumption correlates with the signal strength is important to optimize the battery life.
 As mentioned, one way to improve the signal strength is to use larger antennas. However, this is not always acceptable.
 If an external dipole antenna is not acceptable, a ceramic antenna is preferred over a PCB antenna.
@@ -154,9 +152,8 @@ The DHCP server answers the request with the defined network configuration and a
 The lease time defines how long the client is allowed to use the address. After this period of time, the client has to send a new request. 
 Normally this happens after the half of the lease time.
 The author of this paper analyzes the impact of different lease times on network overhead.
-\\\\
-\textbf{Importance of this paper:}
-\\\\
+\\
+\paragraph{Importance of this paper:}
 Also IoT sensors need an IP address to communicate for example with a MQTT broker or other devices in the network.
 Every time the sensor wakes up from its deep sleep mode, it reconnects to the associated WiFi network and sends a DHCP request to get an IP address.
 The process of getting a valid IP address takes energy. It would for sure make sense to improve this process. 
@@ -183,20 +180,11 @@ In one case, 85B are sent every second and in the other case 850B are sent every
         \item Light-sleep: 44\% more lifetime when sending 850B every ten seconds
         \item Deep-sleep: Not possible to send data every second due to connection reestablishement on waking up.
     \end{itemize}
-\paragraph{Vernetzung:}
+\paragraph{Importance of this paper:}
 This article is relevant because we want so optimize the battery-lifetime of our ESP8266 and this paper shows us the different sleep-modes and the corresponding impact on the energy-consumption. This is fundamental, when we want to optimize the battery-lifetime of our Wi-Fi sensor.
 
 
-%\createBookHeader{schwartz_internet_2016}
-{\let\clearpage\relax \chapter{Internet of things with ESP8266: build amazing internet of things projects using the ESP8266 Wi-Fi chip}}
-\noindent
-\textbf{Autor*innen:} Schwartz,
-Marco\\
-\textbf{Referenztyp:} Book\\
-\textbf{Jahr:} 2016\\
-\textbf{Journal / Herausgeber:} Packt\\
-\textbf{doi / ISBN:} 978-1-78646-802-4\\\\
-\textbf{Zusammenfassung und Vernetzung:}\\
+\createBookHeader{schwartz_internet_2016}
 The author of this book gives a deep insight on the capabilities of the ESPP8266. He shows how to choose the right version of it and what the advantages and disadvantages of those different versions are. Instructions on how to install the IDE are given. In addition to that, this book offers a wide variety of sample-programs and gives an insight on what the ESP8266 is capable of. Tutorials on how to read data from sensors and how to connect it to the Wi-Fi network are given. It also teaches, how to enable machine-to-machine communication. Example code for the different project are available. The ESP8266 is a low cost microcontroller. It has a 32-bit CPU, so it's a SoC and can work without additional hardware. It can directly connect to the internet with it's built in Wi-Fi module and is fairly easy to program with the Arduino IDE. There are multiple versions of the ESP8266 available. Each of it has more funcionality built into it, which makes it very flexible and suitable for almost every usecase. The ESP8266 is available for about 5\$. Because of the features and the low cost, this device is one of the most popular IoT devices available on the market. To program the ESP8266, the Arduino IDE is used.\\
 \paragraph{Importance of this paper:} This book is the fundament to work with the ESP8266. It includes everything someone needs to know when working with this IoT device and for us it is the starting point on working with this device. We are making a prototype for this project and this book covers everything we need to know to realize it.
 
@@ -216,7 +204,7 @@ They show the functionality of MQTT, how it works and give recommendations on wh
     \item The connection between the client and the broker is cut on a given time interval. To prevent this, the client has to send a PINGREQ packet to the broker to signal, that he is still there. The broker responds with a PINGRESP packet.
     \item To program the ESP8266 as an MQTT-client, the Arduino IDE is recommended and as an MQTT-broker, moquitto is suitable. The URL to the MQTT-broker is the IP-adress of it with the port 1883. To display and send or receive messages on a device it's recommended to use MQTTLens on PC and MyMQTT on android  based smartphones.
 \end{itemize}
-\paragraph{Vernetzung:}
+\paragraph{Importance of this paper:}
 When using Wi-Fi with IoT, a communication protocol is inevitable. Because the IoT device is battery-powered, a communication protocol with low energy consumption is key. MQTT suits this requirement. This paper describes how to use this protocol and that's needed for us.
 
 
@@ -231,11 +219,9 @@ The authors of this article analyse the power consumption of battery-powered IoT
     \item It's not always the best way to use low-power modes. It depends on the application. 
     \item When uploading data, the data rate can play a role on energy consumption. They show, that at a rate more than 11Mbps, the energy consumption very slowly decreases and it doesn't have a mentionable impact whether there are 140B or 260B to transmit. At a rate less than 11Mbps, the energy consumption fastly decreases and it the size of the packets has a relative high impact.
 \end{itemize} 
-\paragraph{Vernetzung:}
+\paragraph{Importance of this paper:}
 It's good to know, what sleep-modes we can work with, but it's more important to know, when to use them and how much energy we save. Also it's essential to know, where we can save energy on the network-layer and what uses much energy.
 
-
-\pagebreak
 % +----------------+
 % |    QUELLE 8    |
 % +----------------+
@@ -244,10 +230,10 @@ It's good to know, what sleep-modes we can work with, but it's more important to
 This article deals with optimizing the energy consumption of intelligent sensors, actuators and other devices used for the smart home. These devices are mostly battery-operated and communicate via radio.\linebreak
 As a radio standard, WLAN is usually used, as this technology is already available in most households. The disadvantage of this radio standard is that it has a high energy consumption compared to other standards. This leads to a high maintenance effort. However, since the devices are becoming cheaper and cheaper and WLAN is more secure than competing wireless standards, this article is looking for a suitable optimization.\linebreak
 An ESP 03 was used in the first test setup, which uses the same chipset as the one we use for our tests.\linebreak
-The deep sleep mode was used in the test runs, in which the chipset uses as little energy as possible when idling. However, when using a dynamic IP, this had the disadvantage that the module had to request a new IP via DHCP every time it woke up. In order to achieve this as efficiently as possible, the ESP03 was connected to an MSP430 in the second attempt, which can carry out the process more efficiently. As shown in the second attempt, this is even more effective from a transmission interval of over 1.5 hours than the pure ESP03 with a static IP address. With shorter transmission intervals, the energy that has to be generated for both modules is greater than that which the ESP03 needs to establish the connection. In order to substantiate the results, a comparison was made with the widely used ATMega328P. This works with a 433 MHz technology. This is very energy-efficient, but leads to losses in terms of transmission power and security. By optimizing WiFi technology, this technology becomes more energy-efficient and increases the transmission power and security of sensors, actuators and other devices for the smart home.\linebreak\linebreak
-\textbf{Links:}\\
+The deep sleep mode was used in the test runs, in which the chipset uses as little energy as possible when idling. However, when using a dynamic IP, this had the disadvantage that the module had to request a new IP via DHCP every time it woke up. In order to achieve this as efficiently as possible, the ESP03 was connected to an MSP430 in the second attempt, which can carry out the process more efficiently. As shown in the second attempt, this is even more effective from a transmission interval of over 1.5 hours than the pure ESP03 with a static IP address. With shorter transmission intervals, the energy that has to be generated for both modules is greater than that which the ESP03 needs to establish the connection. In order to substantiate the results, a comparison was made with the widely used ATMega328P. This works with a 433 MHz technology. This is very energy-efficient, but leads to losses in terms of transmission power and security. By optimizing WiFi technology, this technology becomes more energy-efficient and increases the transmission power and security of sensors, actuators and other devices for the smart home.
+\\
+\paragraph{Importance of this paper:}
 This article uses the same microcontroller architecture so we can refer to the results.
-\pagebreak
 	
 % +----------------+
 % |    QUELLE 9    |
@@ -255,10 +241,10 @@ This article uses the same microcontroller architecture so we can refer to the r
 
 \createJournalArticleHeader{konstantakos_energy_2008}
 This paper tries to optimize and predict the energy consumption of microcontrollers as well as possible. This structure and the predictions are basic requirements for the construction of new mobile devices with microcontrollers. These should work as energy-efficiently as possible, but still have to process and persist important commands such as data. In the first experiments it was shown that different software commands consume different amounts of energy. In the further tests, the peripherals of the microcontroller were expanded by an A/D converter, a RAM module and a temperature sensor. The A/D converter was chosen because it enables the connection of input modules, display modules or matrix displays. The RAM module is used to store the data and to expand the internal memory. In the following experiments, the temperature was determined by means of a sensor and stored in the internal memory of the microcontroller. After completing the measurement process, the average values for the last 5, 10, 30 and 60 minutes were calculated. All these steps were done with the help of the internal memory, as this is more energy efficient than the RAM module. The processed data was then transmitted to the memory module and saved. In order to guarantee better traceability of the measured values, the energy consumption of the individual steps was evaluated separately in this experiment.\linebreak
-After the tests, the calculated energy consumption was compared with the values determined. It turned out that only the microcontroller showed a greater deviation from the calculated values. However, since this has a very low consumption compared to the memory module, this is less important. The energy consumption of the A/D converter and the memory module could be calculated very precisely. Overall, however, all values were calculated with a deviation of less than five percent.\linebreak\linebreak
-\textbf{Links:}\\
+After the tests, the calculated energy consumption was compared with the values determined. It turned out that only the microcontroller showed a greater deviation from the calculated values. However, since this has a very low consumption compared to the memory module, this is less important. The energy consumption of the A/D converter and the memory module could be calculated very precisely. Overall, however, all values were calculated with a deviation of less than five percent.
+\\
+\paragraph{Importance of this paper:}
 This paper uses the same microcontroller architecture so we can use the results for our project.
-\pagebreak
 	
 % +----------------+
 % |    QUELLE 10    |
@@ -266,10 +252,10 @@ This paper uses the same microcontroller architecture so we can use the results 
 	
 \createConferencePaperHeader{gomez_analysing_2011}
 Since information and communication technologies now cause 2 to 3 percent of global greenhouse gas emissions, this paper examines the energy consumption of WLAN using the IEEE 802.11g standard. Since more and more devices communicate via WLAN and the energy consumption of WLAN networks is now responsible for 50 percent of the greenhouse gas emissions caused by information and communication technologies, the causes of the energy consumption are being sought. Various scenarios were run through for the experiments. Since it turned out that sending and receiving data consumed different amounts of energy, these were evaluated separately.\linebreak
-To carry out the experiments, a standard laptop was used as the client and a standard router as the access point. This guarantees that the attempt is generally valid and comprehensible. The data that was sent via TCP and UDP was generated with the help of an open source solution. In the experiment, the data was sent in packet sizes from 256 to 2816 bytes. Mainly the effect of the transmission rate was examined. In order to investigate this, the message size was adjusted in the scenario with the constant bit rate so that the transmission rate was kept constant between 1Mb/s and 100Kb/s. In the scenario with the variable bit rate, the message size was kept constant at 1280 bytes, but the transmission interval was varied between 50 and 1000 transmissions per second. As a third scenario, as in the experiment with the variable bit rate, the message size was kept constant at 1280 bytes, but the transmission rate was also fixed using settings. In order to make the test as accurate as possible, the energy consumption of the device itself was also evaluated. The energy during sending, receiving and idling was evaluated. All tests showed that the energy consumption of the devices when idling is the main cause of the energy consumption, since the energy consumption of the device makes up the majority of the consumption even at very high transmission rates.\linebreak\linebreak
-\textbf{Links:}\\
+To carry out the experiments, a standard laptop was used as the client and a standard router as the access point. This guarantees that the attempt is generally valid and comprehensible. The data that was sent via TCP and UDP was generated with the help of an open source solution. In the experiment, the data was sent in packet sizes from 256 to 2816 bytes. Mainly the effect of the transmission rate was examined. In order to investigate this, the message size was adjusted in the scenario with the constant bit rate so that the transmission rate was kept constant between 1Mb/s and 100Kb/s. In the scenario with the variable bit rate, the message size was kept constant at 1280 bytes, but the transmission interval was varied between 50 and 1000 transmissions per second. As a third scenario, as in the experiment with the variable bit rate, the message size was kept constant at 1280 bytes, but the transmission rate was also fixed using settings. In order to make the test as accurate as possible, the energy consumption of the device itself was also evaluated. The energy during sending, receiving and idling was evaluated. All tests showed that the energy consumption of the devices when idling is the main cause of the energy consumption, since the energy consumption of the device makes up the majority of the consumption even at very high transmission rates.
+\\
+\paragraph{Importance of this paper:}
 This article uses the same microcontroller architecture so we can use the optimal setup for our project.
-\pagebreak
 %----------------------------------------------------------------------------------------
 %	CITE
 %----------------------------------------------------------------------------------------
