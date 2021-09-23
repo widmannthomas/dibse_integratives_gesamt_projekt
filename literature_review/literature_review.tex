@@ -14,10 +14,47 @@
 \usepackage[a4paper, total={6in, 8in}]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage{titlesec, blindtext, color}
+\usepackage[style=ieee,sortcites=true,maxbibnames=100]{biblatex}
+
+\addbibresource{../bibtex.bib}
+
 
 \definecolor{gray75}{gray}{0.75}
 \newcommand{\hsp}{\hspace{20pt}}
 \titleformat{\chapter}[hang]{\Large\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Large\bfseries}
+
+\newcommand{\createConferencePaperHeader}[1]{
+    {\let\clearpage\relax \chapter{\citetitle{#1}}}
+    \noindent
+    \textbf{Autor*innen:} \citeauthor{#1} \\
+    \textbf{Referenztyp:} Conference Paper\\
+    \textbf{Jahr:} \citeyear{#1} \\
+    \textbf{Journal / Herausgeber:} \citelist{#1}{publisher}\\
+    \textbf{doi / ISBN:} \citefield{#1}{doi} \\\\
+    \textbf{Summary:}\\
+}
+
+\newcommand{\createJournalArticleHeader}[1]{
+    {\let\clearpage\relax \chapter{\citetitle{#1}}}
+    \noindent
+    \textbf{Autor*innen:} \citeauthor{#1} \\
+    \textbf{Referenztyp:} Journal Article\\
+    \textbf{Jahr:} \citeyear{#1} \\
+    \textbf{Journal / Herausgeber:} \citefield{#1}{journaltitle}\\
+    \textbf{doi / ISBN:} \citefield{#1}{doi} \\\\
+    \textbf{Summary:}\\
+}
+
+\newcommand{\createBookHeader}[1]{
+    {\let\clearpage\relax \chapter{\citetitle{#1}}}
+    \noindent
+    \textbf{Autor*innen:} \citeauthor{#1} \\
+    \textbf{Referenztyp:} Book\\
+    \textbf{Jahr:} \citeyear{#1} \\
+    \textbf{Journal / Herausgeber:} \citefield{#1}{publisher}\\
+    \textbf{doi / ISBN:} \citefield{#1}{isbn} \\\\
+    \textbf{Summary:}\\
+}
 
 \begin{document}
 
@@ -26,45 +63,10 @@
 {\LARGE Literature Review}
 
 % +----------------+
-% |    QUELLE 1    |
-% +----------------+
-
-{\let\clearpage\relax \chapter{Quelle 1}}
-\noindent
-\textbf{Autor*innen:} Max Muster\\
-\textbf{Referenztyp:} Artikel\\
-\textbf{Jahr:} 1843\\
-\textbf{Journal / Herausgeber:}\\
-\textbf{doi / ISBN:}\\\\
-\textbf{Zusammenfassung und Vernetzung:}\\
-...\\
-
-% +----------------+
-% |    QUELLE 2    |
-% +----------------+
-
-{\let\clearpage\relax \chapter{Quelle 2}}
-\noindent
-\textbf{Autor*innen:} Max Muster\\
-\textbf{Referenztyp:} Artikel\\
-\textbf{Jahr:} 1843\\
-\textbf{Journal / Herausgeber:}\\
-\textbf{doi / ISBN:}\\\\
-\textbf{Zusammenfassung und Vernetzung:}\\
-...\\
-
-% +----------------+
 % |    QUELLE 3    |
 % +----------------+
 
-{\let\clearpage\relax \chapter{Is WiFi suitable for energy efficient IoT deployments? A performance study}}
-\noindent
-\textbf{Autor*innen:} Max Muster\\
-\textbf{Referenztyp:} Artikel\\
-\textbf{Jahr:} 1843\\
-\textbf{Journal / Herausgeber:}\\
-\textbf{doi / ISBN:}\\\\
-\textbf{Zusammenfassung und Vernetzung:}\\
+\createConferencePaperHeader{montori_is_2017}
 The author of this study analyzed the performance of WiFi in terms of energy efficiency.
 Therefor some experiments were made with the ESP-12 which is a WiFi capable MCU.
 Specially the impact of battery types, authentication mode and deep sleep cycles on the energy consumption was investigated.
@@ -110,14 +112,7 @@ This paper provides the fundamental ideas behind the sleep modes of MCUs.
 % |    QUELLE 4    |
 % +----------------+
 
-{\let\clearpage\relax \chapter{RSSI Comparison of ESP8266}}
-\noindent
-\textbf{Autor*innen:} Max Muster\\
-\textbf{Referenztyp:} Artikel\\
-\textbf{Jahr:} 1843\\
-\textbf{Journal / Herausgeber:}\\
-\textbf{doi / ISBN:}\\\\
-\textbf{Zusammenfassung und Vernetzung:}\\
+\createConferencePaperHeader{yoppy_rssi_2018}
 In this paper, different ESP8266 modules with different types of antennas have been analyzed.
 The type of the antenna affects the RSSI (received signal strength indicator) which is an indicator of the signal strength.
 The weaker the signal strength is, the more power is used to transmit data.
@@ -149,14 +144,7 @@ If an external dipole antenna is not acceptable, a ceramic antenna is preferred 
 % |    QUELLE 5    |
 % +----------------+
 
-{\let\clearpage\relax \chapter{How DHCP Leases Meet Smart Terminals: Emulation and Modeling}}
-\noindent
-\textbf{Autor*innen:} Max Muster\\
-\textbf{Referenztyp:} Artikel\\
-\textbf{Jahr:} 1843\\
-\textbf{Journal / Herausgeber:}\\
-\textbf{doi / ISBN:}\\\\
-\textbf{Zusammenfassung und Vernetzung:}\\
+\createJournalArticleHeader{li_how_2018}
 In this paper, the basic principles of DHCP (Dynamic Host Configuration Protocol) are described. 
 DHCP is used to automatically configure clients in a network. 
 It allows to automatically assign IP addresses to new clients in a network as well as configuring the subnetmask, dns server, default gateway and many more parameters.
@@ -175,15 +163,7 @@ The process of getting a valid IP address takes energy. It would for sure make s
 An idea would be to detect the type of the device by its MAC address and use a longer lease time. This would also require to store the previous IP configuration on a not volatile storage during the deep sleep phase.
 
 
-
-{\let\clearpage\relax \chapter{Assessing the ESP8266 WiFi module for the Internet of Things}}
-\noindent
-\textbf{Autor*innen:} J. Mesquita, D. Guimarães, C. Pereira, F. Santos and L. Almeida\\
-\textbf{Referenztyp:} Conference Paper\\
-\textbf{Jahr:} 2018\\
-\textbf{Journal / Herausgeber:} IEEE\\
-\textbf{doi / ISBN:} 10.1109/ETFA.2018.8502562\\\\
-\textbf{Zusammenfassung und Vernetzung:}\\
+\createConferencePaperHeader{mesquita_assessing_2018}
 The authors of this article show the ESP8266 and if it's suitable as a battery-powered IoT device with Wi-Fi connectivity.
 They explain the different sleep modes and conduct experiments using them in different contexts.\\\\
 The 3 different sleep modes the ESP8266 has, are:\\
@@ -207,6 +187,7 @@ In one case, 85B are sent every second and in the other case 850B are sent every
 This article is relevant because we want so optimize the battery-lifetime of our ESP8266 and this paper shows us the different sleep-modes and the corresponding impact on the energy-consumption. This is fundamental, when we want to optimize the battery-lifetime of our Wi-Fi sensor.
 
 
+%\createBookHeader{schwartz_internet_2016}
 {\let\clearpage\relax \chapter{Internet of things with ESP8266: build amazing internet of things projects using the ESP8266 Wi-Fi chip}}
 \noindent
 \textbf{Autor*innen:} Schwartz,
@@ -217,18 +198,10 @@ Marco\\
 \textbf{doi / ISBN:} 978-1-78646-802-4\\\\
 \textbf{Zusammenfassung und Vernetzung:}\\
 The author of this book gives a deep insight on the capabilities of the ESPP8266. He shows how to choose the right version of it and what the advantages and disadvantages of those different versions are. Instructions on how to install the IDE are given. In addition to that, this book offers a wide variety of sample-programs and gives an insight on what the ESP8266 is capable of. Tutorials on how to read data from sensors and how to connect it to the Wi-Fi network are given. It also teaches, how to enable machine-to-machine communication. Example code for the different project are available. The ESP8266 is a low cost microcontroller. It has a 32-bit CPU, so it's a SoC and can work without additional hardware. It can directly connect to the internet with it's built in Wi-Fi module and is fairly easy to program with the Arduino IDE. There are multiple versions of the ESP8266 available. Each of it has more funcionality built into it, which makes it very flexible and suitable for almost every usecase. The ESP8266 is available for about 5\$. Because of the features and the low cost, this device is one of the most popular IoT devices available on the market. To program the ESP8266, the Arduino IDE is used.\\
-\paragraph{Vernetzung:} This book is the fundament to work with the ESP8266. It includes everything someone needs to know when working with this IoT device and for us it is the starting point on working with this device. We are making a prototype for this project and this book covers everything we need to know to realize it.
+\paragraph{Importance of this paper:} This book is the fundament to work with the ESP8266. It includes everything someone needs to know when working with this IoT device and for us it is the starting point on working with this device. We are making a prototype for this project and this book covers everything we need to know to realize it.
 
 
-{\let\clearpage\relax \chapter{MQTT based Home Automation System Using
-ESP8266}}
-\noindent
-\textbf{Autor*innen:} R. K. Kodali and S. Soratkal\\
-\textbf{Referenztyp:} Conference Paper\\
-\textbf{Jahr:} 2016\\
-\textbf{Journal / Herausgeber:} IEEE\\
-\textbf{doi / ISBN:} 10.1109/R10-HTC.2016.7906845\\\\
-\textbf{Zusammenfassung und Vernetzung:}\\
+\createConferencePaperHeader{kodali_mqtt_2016}
 The authors of this article show the need of an energy-saving communication protocol for battery-powered IoT devices like the ESP8266.
 They show the functionality of MQTT, how it works and give recommendations on what IDE to use for the ESP8266 as MQTT-client and what programs to use as an MQTT-broker.\\
 \begin{itemize}
@@ -247,15 +220,7 @@ They show the functionality of MQTT, how it works and give recommendations on wh
 When using Wi-Fi with IoT, a communication protocol is inevitable. Because the IoT device is battery-powered, a communication protocol with low energy consumption is key. MQTT suits this requirement. This paper describes how to use this protocol and that's needed for us.
 
 
-
-{\let\clearpage\relax \chapter{Power Consumption Analysis of a Wi-Fi-based IoT Device}}
-\noindent
-\textbf{Autor*innen:} Yüksel ME\\
-\textbf{Referenztyp:} Journal Article\\
-\textbf{Jahr:} 2020\\
-\textbf{Journal / Herausgeber:} Electrica\\
-\textbf{doi / ISBN:} 10.5152/electrica.2020.19081\\\\
-\textbf{Zusammenfassung und Vernetzung:}\\
+\createJournalArticleHeader{department_of_computer_engineering_mehmet_akif_ersoy_university_faculty_of_engineering_and_architecture_burdur_turkey_power_2020}
 The authors of this article analyse the power consumption of battery-powered IoT devices and how to optimize it. They use an ESP32 for it, which has the ESP8266 installed. They analyzed options on how to increase the battery-lifetime when using the build-in sleep-modes and changing how the ESP32 communicates with the given network.\\
 \paragraph{They came to the following conclusions:}
 \begin{itemize}
@@ -275,60 +240,40 @@ It's good to know, what sleep-modes we can work with, but it's more important to
 % |    QUELLE 8    |
 % +----------------+
 
-{\let\clearpage\relax \chapter{Optimizing Power Consumption of Wi-Fi inbuild IoT device}
-\noindent
-\textbf{Autor*innen:} Darshana Thomas, Ross McPherson, Greig Paul, James Irvine\\
-\textbf{Referenztyp:} Artikel\\
-\textbf{Jahr:}  2016\\
-\textbf{Journal / Herausgeber:} IEEE Consumer Electronics Magazine (Volume: 5, Issue: 4, Oct. 2016)\\
-\textbf{doi / ISBN:} 10.1109\/MCE.2016.2590148\\\\
-\textbf{Summary:}\\
-{\raggedright
+\createJournalArticleHeader{thomas_optimizing_2016}
 This article deals with optimizing the energy consumption of intelligent sensors, actuators and other devices used for the smart home. These devices are mostly battery-operated and communicate via radio.\linebreak
 As a radio standard, WLAN is usually used, as this technology is already available in most households. The disadvantage of this radio standard is that it has a high energy consumption compared to other standards. This leads to a high maintenance effort. However, since the devices are becoming cheaper and cheaper and WLAN is more secure than competing wireless standards, this article is looking for a suitable optimization.\linebreak
 An ESP 03 was used in the first test setup, which uses the same chipset as the one we use for our tests.\linebreak
 The deep sleep mode was used in the test runs, in which the chipset uses as little energy as possible when idling. However, when using a dynamic IP, this had the disadvantage that the module had to request a new IP via DHCP every time it woke up. In order to achieve this as efficiently as possible, the ESP03 was connected to an MSP430 in the second attempt, which can carry out the process more efficiently. As shown in the second attempt, this is even more effective from a transmission interval of over 1.5 hours than the pure ESP03 with a static IP address. With shorter transmission intervals, the energy that has to be generated for both modules is greater than that which the ESP03 needs to establish the connection. In order to substantiate the results, a comparison was made with the widely used ATMega328P. This works with a 433 MHz technology. This is very energy-efficient, but leads to losses in terms of transmission power and security. By optimizing WiFi technology, this technology becomes more energy-efficient and increases the transmission power and security of sensors, actuators and other devices for the smart home.\linebreak\linebreak
 \textbf{Links:}\\
-This article uses the same microcontroller architecture so we can refer to the results.}
+This article uses the same microcontroller architecture so we can refer to the results.
 \pagebreak
 	
 % +----------------+
 % |    QUELLE 9    |
 % +----------------+
 
-{\let\clearpage\relax \chapter{Energy Consumption Estimation in Embedded Systems}}
-\noindent
-\textbf{Autor*innen:} Vasilios Konstantakos, Alexander Chatzigeorgiou, Spiridon Nikolaidis, Theodore Laopoulos\\
-\textbf{Referenztyp:} Paper\\
-\textbf{Jahr:}  2008\\
-\textbf{Journal / Herausgeber:}  IEEE Transactions on Instrumentation and Measurement ( Volume: 57, Issue: 4, April 2008) \\
-\textbf{doi / ISBN:} 10.1109/TIM.2007.913724\\\\
-\textbf{Summary:}\\
-{\raggedright
+\createJournalArticleHeader{konstantakos_energy_2008}
 This paper tries to optimize and predict the energy consumption of microcontrollers as well as possible. This structure and the predictions are basic requirements for the construction of new mobile devices with microcontrollers. These should work as energy-efficiently as possible, but still have to process and persist important commands such as data. In the first experiments it was shown that different software commands consume different amounts of energy. In the further tests, the peripherals of the microcontroller were expanded by an A/D converter, a RAM module and a temperature sensor. The A/D converter was chosen because it enables the connection of input modules, display modules or matrix displays. The RAM module is used to store the data and to expand the internal memory. In the following experiments, the temperature was determined by means of a sensor and stored in the internal memory of the microcontroller. After completing the measurement process, the average values for the last 5, 10, 30 and 60 minutes were calculated. All these steps were done with the help of the internal memory, as this is more energy efficient than the RAM module. The processed data was then transmitted to the memory module and saved. In order to guarantee better traceability of the measured values, the energy consumption of the individual steps was evaluated separately in this experiment.\linebreak
 After the tests, the calculated energy consumption was compared with the values determined. It turned out that only the microcontroller showed a greater deviation from the calculated values. However, since this has a very low consumption compared to the memory module, this is less important. The energy consumption of the A/D converter and the memory module could be calculated very precisely. Overall, however, all values were calculated with a deviation of less than five percent.\linebreak\linebreak
 \textbf{Links:}\\
-This paper uses the same microcontroller architecture so we can use the results for our project.}
+This paper uses the same microcontroller architecture so we can use the results for our project.
 \pagebreak
 	
 % +----------------+
 % |    QUELLE 10    |
 % +----------------+
 	
-{\let\clearpage\relax \chapter{Analysing the energy consumption behaviour of WiFi networks}}
-\noindent
-\textbf{Autor*innen:} Karina Gomez; Roberto Riggio; Tinku Rasheed; Fabrizio Granelli\\
-\textbf{Referenztyp:} Artikel\\
-\textbf{Jahr:}  2011\\
-\textbf{Journal / Herausgeber:} 2011 IEEE Online Conference on Green Communications \\
-\textbf{doi / ISBN:} 10.1109/GreenCom.2011.6082515\\\\
-\textbf{Summary:}\\
-{\raggedright
+\createConferencePaperHeader{gomez_analysing_2011}
 Since information and communication technologies now cause 2 to 3 percent of global greenhouse gas emissions, this paper examines the energy consumption of WLAN using the IEEE 802.11g standard. Since more and more devices communicate via WLAN and the energy consumption of WLAN networks is now responsible for 50 percent of the greenhouse gas emissions caused by information and communication technologies, the causes of the energy consumption are being sought. Various scenarios were run through for the experiments. Since it turned out that sending and receiving data consumed different amounts of energy, these were evaluated separately.\linebreak
 To carry out the experiments, a standard laptop was used as the client and a standard router as the access point. This guarantees that the attempt is generally valid and comprehensible. The data that was sent via TCP and UDP was generated with the help of an open source solution. In the experiment, the data was sent in packet sizes from 256 to 2816 bytes. Mainly the effect of the transmission rate was examined. In order to investigate this, the message size was adjusted in the scenario with the constant bit rate so that the transmission rate was kept constant between 1Mb/s and 100Kb/s. In the scenario with the variable bit rate, the message size was kept constant at 1280 bytes, but the transmission interval was varied between 50 and 1000 transmissions per second. As a third scenario, as in the experiment with the variable bit rate, the message size was kept constant at 1280 bytes, but the transmission rate was also fixed using settings. In order to make the test as accurate as possible, the energy consumption of the device itself was also evaluated. The energy during sending, receiving and idling was evaluated. All tests showed that the energy consumption of the devices when idling is the main cause of the energy consumption, since the energy consumption of the device makes up the majority of the consumption even at very high transmission rates.\linebreak\linebreak
 \textbf{Links:}\\
-This article uses the same microcontroller architecture so we can use the optimal setup for our project.}
+This article uses the same microcontroller architecture so we can use the optimal setup for our project.
 \pagebreak
+%----------------------------------------------------------------------------------------
+%	CITE
+%----------------------------------------------------------------------------------------
 
+\printbibliography
 
 \end{document}
