@@ -27,41 +27,41 @@
 \begin{document}
 
 \begin{center}
-\begin{longtable}{p{4.5cm}p{4cm}p{2.5cm}p{4cm}p{2.5cm}p{3.5cm}}
-\toprule
-\lgc Pitcher's name & Rauter, Waldner, Widmann & \lgc FoR category & Sensortechnologie & \lgc Date completed & 16.10.2021\\
-\midrule
-\lgc (A) Working Title & \multicolumn{5}{p{18cm}}{Optimierungsmöglichkeiten der Batterielaufzeit bei WLAN Sensoren im IoT Bereich.} \\[1ex]
-\lgc (B) Basic Research Question & \multicolumn{5}{p{18cm}}{Wie kann die Laufzeit eines mit Batterie betriebenen WLAN IoT Sensoren optimiert werden? } \\[1ex]
-\lgc (C) Key paper(s) & \multicolumn{5}{p{18cm}}{\cite{mesquita_assessing_2018} \cite{montori_is_2017}} \\[1ex]
- \lgc (D) Motivation/Puzzle & \multicolumn{5}{p{18cm}}{ Für die einfache Nachrüstung eines smarten Sensors ist es von Vorteil, diesen über eine Funktechnologie einzubinden. Um die bestehende WLAN Infrastruktur nutzen zu können, wird diese Technologie bevorzugt.} \\[1ex]
-\midrule
-\lgc THREE  & \multicolumn{5}{p{18cm}}{\lgc Three core aspects of any empirical research project i.e. the \gercom{IDioTs} guide} \\
-\midrule
-\lgc  (E) Idea?& \multicolumn{5}{p{18cm}}{Um den Wartungsaufwand der verbauten Sensoren zu minimieren, ist es wichtig, die Batterielaufzeit eines jeden Sensor zu optimieren. Da auf die bereits vorhandene WLAN Infrastruktur aufgebaut werden soll und bekannt ist, dass WLAN für solche Anwendungsfälle aus Engeriegründen weniger gut geeignet ist \cite{thomas_optimizing_2016}, sollen mögliche Optimierungen analysiert und ausgewertet werden.} \\[1ex]
-\lgc  (F) Data?& \multicolumn{5}{p{18cm}}{
- 	\begin{enumerate}
- 		\setlength\itemsep{.1ex}
- 		\item Welche Daten möchten Sie (von wem) erheben?
- 		\subitem Stromverbrauch pro Messung und Übermittelung und die daraus resultierende Batterielaufzeit
- 		\item Wie kommen Sie an die Daten?
- 		\subitem Es soll ein Versuchsaufbau aufgebaut werden, welcher die benötigten Daten liefern soll.
- 		\item Qualität/ Reliabilität der Daten? Mögliche Probleme?
- 		\subitem Messfehler, Fertigungstoleranzen
- 	\end{enumerate}} \\[1ex]
-\lgc (G) Tools? & \multicolumn{5}{p{18cm}}{\textbf{Versuchsaufbau:} Espresif ESP8266, DHT11 (Temperatursensor), Arduino IDE, Multimeter } \\[1ex]
-\midrule
-\lgc  TWO & \multicolumn{5}{p{18cm}}{\lgc Two key questions} \\
-\midrule
-\lgc (H) What’s New?& \multicolumn{5}{p{18cm}}{ Es werden verschiedene Optimierungsmöglichkeiten bzgl. Energieverbrauch für den ESP8266 und deren Auswirkungen aufgelistet. } \\[1ex]
-\lgc (I) So What? & \multicolumn{5}{p{18cm}}{ Durch die Optimierung des Energieverbrauches wird der Wartungsaufwand und die damit verbundenen Kosten minimiert. Ebenso können dadurch Resourcenschonende Systeme entwickelt werden. } \\[1ex]
-\midrule
-\lgc ONE & \multicolumn{5}{p{18cm}}{\lgc One bottom line} \\
-\midrule
-\lgc  (J) Contribution& \multicolumn{5}{p{18cm}}{Eine Auflistung an Optimierungsmöglichkeiten und deren Auswirkungen.} \\[1ex]
- \lgc (K) Other Considerations& \multicolumn{5}{p{18cm}}{Die Entwicklung eines funktionsfähigen Versuchsaufbau und dessen Auswertung.} \\[1ex]
-\bottomrule   
-\end{longtable}
+	\begin{longtable}{p{4.5cm}p{4cm}p{2.5cm}p{4cm}p{2.5cm}p{3.5cm}}
+		\toprule
+		\lgc Pitcher's name              & Rauter, Waldner, Widmann                                                                                                                                                                                                                                                                                                                                                                                                                             & \lgc FoR category & Sensortechnologie & \lgc Date completed & 16.10.2021 \\
+		\midrule
+		\lgc (A) Working Title           & \multicolumn{5}{p{18cm}}{Analyzing possibilities to optimitze the battery lifetime of IoT devices with WLAN-connectivity.}                                                                                                                                                                                                                                                                                                                                                                                                      \\[1ex]
+		\lgc (B) Basic Research Question & \multicolumn{5}{p{18cm}}{How can the battery lifetime of IoT devices with WLAN-connectivity be optimized?}                                                                                                                                                                                                                                                                                                                                                                                                                      \\[1ex]
+		\lgc (C) Key paper(s)            & \multicolumn{5}{p{18cm}}{\cite{mesquita_assessing_2018} \cite{montori_is_2017}}                                                                                                                                                                                                                                                                                                                                                                                                                                                 \\[1ex]
+		\lgc (D) Motivation/Puzzle       & \multicolumn{5}{p{18cm}}{To adapt new IoT devices, it's essential to connect them to some kind of radio technology. WLAN is already available, so this technology is chosen. Some IoT devices may not be easy reachable, so their battery lifetime has to be optimized.}                                                                                                                                                                                                                                                        \\[1ex]
+		\midrule
+		\lgc THREE                       & \multicolumn{5}{p{18cm}}{\lgc Three core aspects of any empirical research project i.e. the \gercom{IDioTs} guide}                                                                                                                                                                                                                                                                                                                                                                                                              \\
+		\midrule
+		\lgc  (E) Idea?                  & \multicolumn{5}{p{18cm}}{To minimize the effort of maintaining IoT devices that are hard to access, it's essential to optimize their energy consumption resulting in higher battery lifetime. It is known that WLAN isn't very suitable for such a use case because of it's energy consumption. But because in this particular case, new IoT devices have to be connected via WLAN, possibilities to optimize the energy consumption are evaluated.}                                                                            \\[1ex]
+		\lgc  (F) Data?                  & \multicolumn{5}{p{18cm}}{
+		\begin{enumerate}
+				\setlength\itemsep{.1ex}
+				\item Which kind of data do you want to collect (by whom)?
+				      \subitem Energy consumption and the resulting battery lifetime.
+				\item How do you gather the data?
+				      \subitem A prototype is built, that gives the desired data.
+				\item Quality/reliability of the data? Possible problems?
+				      \subitem Measurement errors, manufacturing tolerances
+			\end{enumerate}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     \\[1ex]
+		\lgc (G) Tools?                  & \multicolumn{5}{p{18cm}}{\textbf{Prototype:} Espresif ESP8266, DHT11 (Temperature sensor), Arduino IDE, Multimeter }                                                                                                                                                                                                                                                                                                                                                                                                            \\[1ex]
+		\midrule
+		\lgc  TWO                        & \multicolumn{5}{p{18cm}}{\lgc Two key questions}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                \\
+		\midrule
+		\lgc (H) What’s New?             & \multicolumn{5}{p{18cm}}{Possibilities to optimize the battery energy consumption of the ESP8266 and those impacts are listed.}                                                                                                                                                                                                                                                                                                                                                                                                 \\[1ex]
+		\lgc (I) So What?                & \multicolumn{5}{p{18cm}}{Through the optimization of the energy consumption, the effort to maintain the devices and the resulting cost is minimized. In addition to that, sustaining systems can be developed.}                                                                                                                                                                                                                                                                                                                 \\[1ex]
+		\midrule
+		\lgc ONE                         & \multicolumn{5}{p{18cm}}{\lgc One bottom line}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  \\
+		\midrule
+		\lgc  (J) Contribution           & \multicolumn{5}{p{18cm}}{A list of possibilities to optimize the battery lifetime and whose evaluation.}                                                                                                                                                                                                                                                                                                                                                                                                                        \\[1ex]
+		\lgc (K) Other Considerations    & \multicolumn{5}{p{18cm}}{The development of a fully functioning prototype and whose evaluation.}                                                                                                                                                                                                                                                                                                                                                                                                                                \\[1ex]
+		\bottomrule
+	\end{longtable}
 \end{center}
 
 %----------------------------------------------------------------------------------------
