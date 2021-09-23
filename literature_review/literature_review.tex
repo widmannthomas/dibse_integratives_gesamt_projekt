@@ -270,7 +270,65 @@ The authors of this article analyse the power consumption of battery-powered IoT
 It's good to know, what sleep-modes we can work with, but it's more important to know, when to use them and how much energy we save. Also it's essential to know, where we can save energy on the network-layer and what uses much energy.
 
 
+\pagebreak
+% +----------------+
+% |    QUELLE 8    |
+% +----------------+
 
+{\let\clearpage\relax \chapter{Optimizing Power Consumption of Wi-Fi inbuild IoT device}
+\noindent
+\textbf{Autor*innen:} Darshana Thomas, Ross McPherson, Greig Paul, James Irvine\\
+\textbf{Referenztyp:} Artikel\\
+\textbf{Jahr:}  2016\\
+\textbf{Journal / Herausgeber:} IEEE Consumer Electronics Magazine (Volume: 5, Issue: 4, Oct. 2016)\\
+\textbf{doi / ISBN:} 10.1109\/MCE.2016.2590148\\\\
+\textbf{Summary:}\\
+{\raggedright
+This article deals with optimizing the energy consumption of intelligent sensors, actuators and other devices used for the smart home. These devices are mostly battery-operated and communicate via radio.\linebreak
+As a radio standard, WLAN is usually used, as this technology is already available in most households. The disadvantage of this radio standard is that it has a high energy consumption compared to other standards. This leads to a high maintenance effort. However, since the devices are becoming cheaper and cheaper and WLAN is more secure than competing wireless standards, this article is looking for a suitable optimization.\linebreak
+An ESP 03 was used in the first test setup, which uses the same chipset as the one we use for our tests.\linebreak
+The deep sleep mode was used in the test runs, in which the chipset uses as little energy as possible when idling. However, when using a dynamic IP, this had the disadvantage that the module had to request a new IP via DHCP every time it woke up. In order to achieve this as efficiently as possible, the ESP03 was connected to an MSP430 in the second attempt, which can carry out the process more efficiently. As shown in the second attempt, this is even more effective from a transmission interval of over 1.5 hours than the pure ESP03 with a static IP address. With shorter transmission intervals, the energy that has to be generated for both modules is greater than that which the ESP03 needs to establish the connection. In order to substantiate the results, a comparison was made with the widely used ATMega328P. This works with a 433 MHz technology. This is very energy-efficient, but leads to losses in terms of transmission power and security. By optimizing WiFi technology, this technology becomes more energy-efficient and increases the transmission power and security of sensors, actuators and other devices for the smart home.\linebreak\linebreak
+\textbf{Links:}\\
+This article uses the same microcontroller architecture so we can refer to the results.}
+\pagebreak
+	
+% +----------------+
+% |    QUELLE 9    |
+% +----------------+
+
+{\let\clearpage\relax \chapter{Energy Consumption Estimation in Embedded Systems}}
+\noindent
+\textbf{Autor*innen:} Vasilios Konstantakos, Alexander Chatzigeorgiou, Spiridon Nikolaidis, Theodore Laopoulos\\
+\textbf{Referenztyp:} Paper\\
+\textbf{Jahr:}  2008\\
+\textbf{Journal / Herausgeber:}  IEEE Transactions on Instrumentation and Measurement ( Volume: 57, Issue: 4, April 2008) \\
+\textbf{doi / ISBN:} 10.1109/TIM.2007.913724\\\\
+\textbf{Summary:}\\
+{\raggedright
+This paper tries to optimize and predict the energy consumption of microcontrollers as well as possible. This structure and the predictions are basic requirements for the construction of new mobile devices with microcontrollers. These should work as energy-efficiently as possible, but still have to process and persist important commands such as data. In the first experiments it was shown that different software commands consume different amounts of energy. In the further tests, the peripherals of the microcontroller were expanded by an A/D converter, a RAM module and a temperature sensor. The A/D converter was chosen because it enables the connection of input modules, display modules or matrix displays. The RAM module is used to store the data and to expand the internal memory. In the following experiments, the temperature was determined by means of a sensor and stored in the internal memory of the microcontroller. After completing the measurement process, the average values for the last 5, 10, 30 and 60 minutes were calculated. All these steps were done with the help of the internal memory, as this is more energy efficient than the RAM module. The processed data was then transmitted to the memory module and saved. In order to guarantee better traceability of the measured values, the energy consumption of the individual steps was evaluated separately in this experiment.\linebreak
+After the tests, the calculated energy consumption was compared with the values determined. It turned out that only the microcontroller showed a greater deviation from the calculated values. However, since this has a very low consumption compared to the memory module, this is less important. The energy consumption of the A/D converter and the memory module could be calculated very precisely. Overall, however, all values were calculated with a deviation of less than five percent.\linebreak\linebreak
+\textbf{Links:}\\
+This paper uses the same microcontroller architecture so we can use the results for our project.}
+\pagebreak
+	
+% +----------------+
+% |    QUELLE 10    |
+% +----------------+
+	
+{\let\clearpage\relax \chapter{Analysing the energy consumption behaviour of WiFi networks}}
+\noindent
+\textbf{Autor*innen:} Karina Gomez; Roberto Riggio; Tinku Rasheed; Fabrizio Granelli\\
+\textbf{Referenztyp:} Artikel\\
+\textbf{Jahr:}  2011\\
+\textbf{Journal / Herausgeber:} 2011 IEEE Online Conference on Green Communications \\
+\textbf{doi / ISBN:} 10.1109/GreenCom.2011.6082515\\\\
+\textbf{Summary:}\\
+{\raggedright
+Since information and communication technologies now cause 2 to 3 percent of global greenhouse gas emissions, this paper examines the energy consumption of WLAN using the IEEE 802.11g standard. Since more and more devices communicate via WLAN and the energy consumption of WLAN networks is now responsible for 50 percent of the greenhouse gas emissions caused by information and communication technologies, the causes of the energy consumption are being sought. Various scenarios were run through for the experiments. Since it turned out that sending and receiving data consumed different amounts of energy, these were evaluated separately.\linebreak
+To carry out the experiments, a standard laptop was used as the client and a standard router as the access point. This guarantees that the attempt is generally valid and comprehensible. The data that was sent via TCP and UDP was generated with the help of an open source solution. In the experiment, the data was sent in packet sizes from 256 to 2816 bytes. Mainly the effect of the transmission rate was examined. In order to investigate this, the message size was adjusted in the scenario with the constant bit rate so that the transmission rate was kept constant between 1Mb/s and 100Kb/s. In the scenario with the variable bit rate, the message size was kept constant at 1280 bytes, but the transmission interval was varied between 50 and 1000 transmissions per second. As a third scenario, as in the experiment with the variable bit rate, the message size was kept constant at 1280 bytes, but the transmission rate was also fixed using settings. In order to make the test as accurate as possible, the energy consumption of the device itself was also evaluated. The energy during sending, receiving and idling was evaluated. All tests showed that the energy consumption of the devices when idling is the main cause of the energy consumption, since the energy consumption of the device makes up the majority of the consumption even at very high transmission rates.\linebreak\linebreak
+\textbf{Links:}\\
+This article uses the same microcontroller architecture so we can use the optimal setup for our project.}
+\pagebreak
 
 
 \end{document}
