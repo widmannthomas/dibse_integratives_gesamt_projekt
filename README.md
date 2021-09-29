@@ -12,7 +12,7 @@
 **H0:** The usage of a static IP instead of DHCP has no impact on the power consumption of the system.
 **H1:** The usage of a static IP improves the power consumption compared to DHCP.
 
-### DHCP lease time
-(Has the duration of the DHCP lease time an impact on the energy efficiency?)
-**H0:** The duration of the DHCP lease time has no impact on the power consumption.
-**H1:** An increase of the DHCP lease time improves the energy efficiency.
+### UDP vs TCP
+(Is there a difference of using UDP instead of TCP?)
+**H0:** Both transport protocols have the same power consumption.
+**H1:** By using UDP instead of TCP, the energy efficiency can be improved.
