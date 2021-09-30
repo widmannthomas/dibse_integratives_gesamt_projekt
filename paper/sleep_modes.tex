@@ -1,3 +1,51 @@
 \subsection{Sleep modes}
+Sleep modes are a common aproach in the IoT area. 
+The basic idea is to reduce the power consumption by disabling unused modules in the chip.
+In the case of the ESP8266, the vendor provides three different sleep modes. 
+\ref{tab_sleep_modes} summarises the capabilities and typical current consumptions.
+\cite{mesquita_assessing_2018}
+
+\begin{table}[htbp]
+\caption{ESP8266 sleep modes}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Module}&\textbf{Modem sleep}&\textbf{Light sleep}&\textbf{Deep sleep}\\
+\hline
+\textbf{WiFi} & OFF & OFF & OFF\\
+\textbf{AP association} & Connected & Connected & Disconnected\\
+\textbf{System clock} & ON & OFF & OFF\\
+\textbf{RTC} & ON & ON & ON\\
+\textbf{CPU} & ON & Pending & OFF\\
+\hline
+\textbf{Substrate current} & $15mA$ & $0.4mA$ & $20\mu A$\\
+\hline
+\end{tabular}
+\label{tab_sleep_modes}
+\end{center}
+\end{table}
+
 \subsubsection{Modem sleep}
+Modem sleep is the default sleep mode of the ESP8266 and is recommended for applications that require a real time CPU control. \cite{mesquita_assessing_2018}
+By enabling the modem sleep, the ESP8266 will turn off the WiFi modem between the DTIM beacons. 
+Importantly, the connection to the AP stays established. This avoids a re-connect over time.
+This improves the power consumption of the system and has the advantage that the system stays connected to the AP. \cite{espressif_inc_esp8266_2016}\\
+A typical use case is a WiFi controlled light bulb that provides real time light control.
+
+\subsubsection{Light sleep}
+The light sleep mode is similar to the modem sleep mode with the additional improvement that the internal clock is powered off and the CPU is suspended.\\
+During the light sleep, the CPU does not respond to external interrupt events. 
+This has the affect that the ESP8266 needs to be woken up via an external GPIO.
+According to the datasheet \cite{espressif_inc_esp8266_2016}, it takes less than $3ms$.\\
+This mode can be used when the application needs to stay connected to the access point 
+and needs to responde to incoming data. The CPU is powered off when no data receives.
+
 \subsubsection{Deep sleep}
+For ultra low power applications, the ESP8266 provides a deep sleep mode.
+In this mode are all modules disabled except the RTC which is responsible for a periodic wake up.
+The WiFi connection is terminated and the modem is powered off. By applying a pulse to the RST pin of the ESP8266, it can be woken up.
+This pulse can be generated periodically by the RTC.\\
+The built in RTC memory makes it possible to store data over multiple deep sleep cycles.
+This makes it possible to collect multiple measurement over time and send them out in a single package.\\
+Deep sleep can be used for ultra low power applications that can be idle most of the time. 
+However, there is the limitation that the system is not reachable from the outside at all times. \cite{espressif_inc_esp8266_2016}
