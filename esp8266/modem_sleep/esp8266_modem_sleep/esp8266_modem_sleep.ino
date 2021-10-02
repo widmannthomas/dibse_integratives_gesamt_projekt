@@ -1,8 +1,8 @@
 #include <ESP8266WiFi.h>
 
 #ifndef STASSID
-#define STASSID "WIDMANN_PRIVATE"
-#define STAPSK  "Wid2017_AP"
+#define STASSID "**********"
+#define STAPSK  "**********"
 #endif
 
 const char* ssid = STASSID;
