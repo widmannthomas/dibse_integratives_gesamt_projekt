@@ -8,7 +8,7 @@ float shunt_r_ohm = 2.2;
 void setup() 
 {
   // Use high baud rate to decrease data transmission time.
-  Serial.begin(1000000);
+  Serial.begin(230400);
   monitor.begin();
 
   Wire.setClock(1000000);
@@ -21,11 +21,27 @@ void setup()
   monitor.calibrate(shunt_r_ohm, 0.1);
 }
 
+void printCSV(float current_ma)
+{
+  Serial.print(millis());
+  Serial.print(" ");
+  Serial.println(current_ma, 5);
+}
+
+void printForPlotter(float current_ma)
+{
+  Serial.print(0);
+  Serial.print(" ");
+  Serial.print(140);
+  Serial.print(" ");
+  Serial.println(current_ma, 5);
+}
+
 void loop() 
 {
   float voltage_mv = monitor.shuntVoltage() * 1000;
   float current_ma = voltage_mv / shunt_r_ohm;
-  Serial.print(millis());
-  Serial.print(" ");
-  Serial.println(current_ma, 5);
+  
+  //printForPlotter(current_ma);
+  printCSV(current_ma);
 }

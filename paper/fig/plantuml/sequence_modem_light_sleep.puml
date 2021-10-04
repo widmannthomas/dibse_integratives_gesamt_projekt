@@ -1,0 +1,22 @@
+@startuml
+start
+
+: powerUp;
+: setRandomMacAddress;
+: connectToAccessPoint;
+: setSleepMode;
+note right
+**modem** or **light** sleep mode
+end note
+
+while (true) is (true)
+    : ping;
+    note right
+        ping local gateway
+          Size: 32 Bytes
+          TTL: 100ms
+    end note
+endwhile
+
+end
+@enduml

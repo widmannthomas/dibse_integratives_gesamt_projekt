@@ -1,0 +1,10 @@
+@startuml
+start
+
+: powerUp;
+: setRandomMacAddress;
+: connectToAccessPoint;
+: enterDeepSleep;
+
+end
+@enduml

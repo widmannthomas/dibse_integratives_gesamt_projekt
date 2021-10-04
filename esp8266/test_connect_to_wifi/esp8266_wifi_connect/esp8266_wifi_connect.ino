@@ -1,8 +1,8 @@
 #include <ESP8266WiFi.h>
 
 #ifndef STASSID
-#define STASSID "********"
-#define STAPSK  "*******"
+#define STASSID "****"
+#define STAPSK  "****"
 #endif
 
 const char* ssid = STASSID;
@@ -44,7 +44,7 @@ void setup()
 
   Serial.println("Good night...");
 
-  ESP.deepSleep(10E6);
+  ESP.deepSleep(5E6);
 }
 
 void loop() {}
