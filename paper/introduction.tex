@@ -1,1 +1,9 @@
-\section{Theoretical background}
+IoT is an evergrowing technology and it is estimated that in 2025, 75.4 billion IoT devices will install around the globe \cite{lucero2016iot}. These devices can be used in a wide range of life applications such as healthcare, transportaion, logistics and even in personal smart home environments.\\  
+In order to declare a microcontroller or in general, a programmable device, an IoT device, it needs to communicate in some sort to the internet or to other devices. There are numerous communication protocols available to do that job. Some examples are ZigBee, BLE, Z-Wave, NFC and WiFi \cite{8079928}. 
+When choosing a suitable connection protocol, the already available communication protocols and their energy consumption should be considered.\\
+In our research paper, we investigate the different methods to extend the battery life of IoT devices with WiFi communication, because WiFi is the most common communication protocol that's available in nearly all households and we want this paper to be in context of smart home applications.\\
+A part of a smart home environment can be described as Wireless sensor network. A Wireless sensor network consists of battery powered stand-alone devices with few sensors on them, with limitied processing power and an interface that allows them to communicate with each other \cite{wsn}. 
+An example for WSN in smart home would be a battery powered ESP8266 with a temperature sensor on it, that sends data via MQTT to other devices.
+MQTT is a light weight Message Queuing Telemetry Transport (MQTT) protocol which can be used perfectly with the ESP8266 because of it's light weight and small energy consumption \cite{kodali_mqtt_2016}.\\
+In this paper, we evaluate three categories of methods to increase the battery life of the ESP8266 connected via WiFi and their impact on the energy efficiency.
+These three questions are asked and evaluated: Do the different sleep modes of the ESP8266 improve the energy efficiency?, does the usage of a static IP instead of DHCP improve the energy efficiency?, is there a difference of using UDP instead of TCP?
