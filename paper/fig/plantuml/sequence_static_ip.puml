@@ -1,0 +1,10 @@
+@startuml
+start
+
+: powerUp;
+: setStaticIpAddress;
+: connectToAccessPoint;
+: enterDeepSleep;
+
+end
+@enduml
