@@ -1,0 +1,16 @@
+@startuml
+start
+: powerup;
+: connect to Wifi;
+: start current measurement;
+: connect WiFi client to remote server;
+while (for) is (i < 10000)
+    :sending;
+    note right
+        random number
+    end note
+endwhile
+: disconnect WiFi client from remote server;
+: end current measurement;
+end
+@enduml
