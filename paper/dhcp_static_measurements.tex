@@ -8,11 +8,15 @@ The ESP8266WiFi library provides functionality to set a fixed IP address for our
 
 \subsubsection{DHCP}
 As shown you can see in Fig. \ref{fig:dhcp}, the connection to the WiFi network by using DHCP takes approximately 5.5 seconds and there are three spikes where the ESP8266 takes 140-120 milliamps.
-In average, the energy consumption is about 68.9 milliamps and in total, it consumes about 360 maS. 
+In average, the energy consumption is about 68.9 milliamps and in total, it consumes about 360 maS or 0.1 maH in total.
 It's mentionable that in this case, everytime the device connects to the network, it gets a new IP address. This happens because the lease time runs out before the device reconnects again.
-This can be optimized by setting longer lease times. When the lease time is long enough and the device doen't get a new IP address, it behaves like it's getting a static IP address on the energy consumption perspective.
+This can be optimized by setting longer lease times. When the lease time is long enough and the device doen't get a new IP address, it behaves like it's getting a static IP address on the energy consumption perspective.\\
 
 \subsubsection{Static IP address}
+In Fig. \ref{fig:static_ip} a connection interval to the WiFi network by using a static IP address is shown. 
+The energy consumption is also in average about 68.9 milliamps and as the establishment of the connection is takes less time, it consumes about 282 maS or 0.078 maH in total.
+The duration of the establishment of the connection is shorter, because there is no commnucation with the DHCP server needed.
+
 
 
 \begin{figure}[h]
@@ -27,7 +31,7 @@ This can be optimized by setting longer lease times. When the lease time is long
     \caption{Experimental setup for use of a static IP.}
     \label{fig:static_ip}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}[h] 
     \centering
     \includegraphics[width =\linewidth]{fig/dhcp.png}
     \caption{Experimental setup for use of DHCP with new IP address every reconnect.}
