@@ -1,9 +1,12 @@
 \subsection{Sleep modes}
-To analyse the power consumption of the different sleep modes,
-we monitored the current over time.\\
 
 \subsubsection{Experimental setup}
-Fig. \ref{fig:experiment_modem_light_sleep} shows the sequence of the test programm for modem and light sleep.
+A common use case of a battery powered device is a temperature sensor.
+Therefore, we used the following experimental setup:
+\textit{The device should measure the temperature with an interval of $T_{measure} = 15min$.
+MQTT should be used to publish the measured data to other devices.}
+
+Fig. \ref{fig:experiment_modem_light_sleep} represents the test programm for the modem and light sleep.
 The step \textit{setRandomMacAddress} makes sure that the ESP8266 always gets a new IP address.
 
 \begin{figure}[h]
@@ -14,26 +17,21 @@ The step \textit{setRandomMacAddress} makes sure that the ESP8266 always gets a 
 \end{figure}
 
 Fig. \ref{fig:experiment_deep_sleep} describes the experimental setup that was used to perform tests on the deep sleep mode.
-After the \textit{enterDeepSleep} step, the ESP8266 sleeps for $5s$ and starts the sequence again.
+After the \textit{enterDeepSleep} step, the ESP8266 sleeps for $15min$ and starts the sequence again.
+The difference between deep sleep and modem / light sleep mode is, that the controller restarts the programm everytime it wakes up from the deep sleep mode.
 \begin{figure}[h]
     \centering
-    \includegraphics[width = 0.35 \linewidth]{fig/sequence_deep_sleep.png}
+    \includegraphics[width = 0.7 \linewidth]{fig/sequence_deep_sleep.png}
     \caption{Experimental setup for deep sleep.}
     \label{fig:experiment_deep_sleep}
 \end{figure}
 
 \subsubsection{Modem sleep}
 As mentioned in TODO, the ESP8266 automatically disables the modem when there is no data transmission required.
-Fig. \ref{fig:modem_sleep} shows the current consumption of the module over time.
 During transmission the module takes around $80mA$. During modem sleep, $20mA$ are needed.
 The modem wakes up every $100ms$ to keep the connection to the access point established.
-Fig. \ref{fig:beacon_interval} shows the beacon interval of $100ms$.
-
-\begin{figure}[h]
-    \includegraphics[width = \linewidth]{fig/modem_sleep.png}
-    \caption{The ESP8266 automatically activates the sleep mode of the modem when no data transmission is required.}
-    \label{fig:modem_sleep}
-\end{figure}
+Fig. \ref{fig:beacon_interval} shows the beacon interval of $100ms$. 
+The same behavior was observed in \cite{montori_is_2017}.
 
 \begin{figure}[h]
     \includegraphics[width = \linewidth]{fig/beacon_interval.png}

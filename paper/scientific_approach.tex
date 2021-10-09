@@ -7,11 +7,13 @@ When conducting, what impact the different sleep modes, the ESP8266-01 provides,
 When conducting, if using a static IP instead of DHCP has an impact, we connect the ESP8266-01 either with a static IP or with DHCP and, in case of DHCP, with a new MAC-address to the WiFi network and go immediately after into the deep sleep mode, to better see, what impact that approach has and how long the chosen method takes.\\
 When conducting, if there's an impact on energy consumption when using UDP instead of TCP, we connect the ESP8266-01 over DHCP with a new MAC-Address to the WiFi network, send either a TCP or UDP packet, disconnect, wait 2 seconds and repeat this sequence.\\
 During the experiment, the WiFi network operates like a normal network in a private household with several devices connected, so it's an experiment with realistic circumstances.\\
-To measure the energy consumption, we used the INA219 module and the stock resistor replaced with a 2.2$\Omega$ resistor as well as an Arduino board to display our measurements. \\
-We measured the energy consumption in milliamps every 2-3 milliseconds.
-On every part of the experiment we measured ten times, because we are in a realistic operating environment with a WiFi network that's also operating with other devices and therefore not every measurement will be the same.\\
-The manufacturing tolerance of every part used is also to be considered.
-To write the serial-output of the Arduino with the INA219 into a .csv file we used the programs "minicom" and "tera term".
+
+To measure the energy consumption, we used an INA219 module which measures the voltage $U_{shunt}$ on a shunt resistor $R_{shunt}$ that is caused by the current $I_{shunt}$ through it.
+The current $I_{shunt}$ can finaly be calculated by the ohm's law:
+\begin{equation*}
+    I = \frac{U}{R}
+\end{equation*}
+To get a expressive result, we perfomed each experiment 10 times.
 
 
 
