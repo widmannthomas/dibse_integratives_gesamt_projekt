@@ -10,11 +10,14 @@ note right
 end note
 
 while (true) is (true)
-    : ping;
+    : publishDummySensorData;
     note right
-        ping local gateway
-          Size: 32 Bytes
-          TTL: 100ms
+        Sends fake temperature 
+        sensor data to a MQTT broker.
+    end note
+    : delay;
+    note right
+        for 15min
     end note
 endwhile
 
