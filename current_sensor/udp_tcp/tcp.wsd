@@ -1,16 +1,19 @@
-@startuml
+@startuml tcp
 start
 : powerup;
 : connect to Wifi;
-: start current measurement;
-: connect WiFi client to remote server;
-while (for) is (i < 10000)
-    :sending;
-    note right
-        random number
-    end note
+while (for) is (i < 100)
+    : start current measurement;
+    : connect WiFi client to remote server;
+    while (for) is (j < 10000)
+        :sending;
+        note right
+            random input
+        end note
+    endwhile
+    : disconnect WiFi client from remote server;
+    : end current measurement;
+    : wait 100 milliseconds;
 endwhile
-: disconnect WiFi client from remote server;
-: end current measurement;
 end
 @enduml

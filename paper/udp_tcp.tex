@@ -1,1 +1,19 @@
-\subsection{UDP / TCP}
+\subsection{UDP and TCP}
+\subsubsection{TCP}
+Transmission Control Protocol is a connection-oriented network protocol
+for sending data over a network.
+This means that TCP waits until a connection is established and
+then starts transmitting data\cite{postel1981transmission}.
+TCP guaratees that data is transmitted to recipiend
+in the correct order and without corrupt segments.
+As a downside, this creates an enormous overhead compared
+to other network protocols\cite{singh2014survey}\newline.
+\subsubsection{UDP}
+User Datagram Protocol is a connectionless network protocol
+\cite{postel1980user}.
+This protocol has no error handling or recovery options for
+ the transmission and sends the data continuously.
+It is not necessary for the sender that the client 
+receives the data.
+Compared to TCP, it allows less overhead when transferring data
+\cite{singh2014survey}.
