@@ -4,7 +4,15 @@ start
 : powerUp;
 : setRandomMacAddress;
 : connectToAccessPoint;
+: publishDummySensorData;
+note right
+    Sends fake temperature 
+    sensor data to a MQTT broker.
+end note
 : enterDeepSleep;
+note right
+    for 15min
+end note
 
 end
 @enduml
