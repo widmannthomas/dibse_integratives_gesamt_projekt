@@ -27,7 +27,7 @@ The difference between deep sleep and modem / light sleep mode is, that the cont
 \end{figure}
 
 \subsubsection{Modem sleep}
-As mentioned in TODO, the ESP8266 automatically disables the modem when there is no data transmission required.
+As mentioned in \ref{sec:modem_sleep}, the ESP8266 automatically disables the modem when there is no data transmission required.
 During transmission the module takes around $80mA$. During modem sleep, $20mA$ are needed.
 The modem wakes up every $100ms$ to keep the connection to the access point established.
 Fig. \ref{fig:beacon_interval} shows the beacon interval of $100ms$. 
@@ -40,7 +40,7 @@ The same behavior was observed in \cite{montori_is_2017}.
 \end{figure}
 
 \subsubsection{Light sleep}
-As described in TODO, the light sleep mode disables the CPU when no task has to be processed.
+As described in \ref{sec:light_sleep}, the light sleep mode disables the CPU when no task has to be processed.
 When a task has to be processed, the ESP8266 switches back into modem sleep.
 Fig. \ref{tab_sleep_modes} shows the change from light sleep (green) to modem sleep (red).
 It is clear to see that the ESP8266 still needs a lot of power when a beacon arrives (every $100ms$).
@@ -52,7 +52,7 @@ It is clear to see that the ESP8266 still needs a lot of power when a beacon arr
 \end{figure}
 
 \subsubsection{Deep sleep}
-The deep sleep mode is the most efficient sleep mode, as described in TODO. 
+The deep sleep mode is the most efficient sleep mode, as described in \ref{sec:deep_sleep}. 
 We achieved a power consumption of only $20 \mu A$. 
 However, the ESP8266 takes a long time to reconnect to the WiFi network after the sleep phase.
 Fig. \ref{fig:deep_sleep} shows the power consumtion during sleep and wake phase.
