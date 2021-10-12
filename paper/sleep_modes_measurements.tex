@@ -6,8 +6,8 @@ Therefore, we used the following experimental setup:
 \textit{The device should measure the temperature with an interval of $T_{measure} = 15min$.
 MQTT should be used to publish the measured data to other devices.}
 
-Fig. \ref{fig:experiment_modem_light_sleep} represents the test programm for the modem and light sleep.
-The step \textit{setRandomMacAddress} makes sure that the ESP8266 always gets a new IP address.
+Fig. \ref{fig:experiment_modem_light_sleep} shows the test programm for the modem and light sleep.
+The step \textit{setRandomMacAddress} makes sure that the ESP8266-01 always gets a new IP address.
 
 \begin{figure}[h]
     \centering
@@ -16,8 +16,8 @@ The step \textit{setRandomMacAddress} makes sure that the ESP8266 always gets a 
     \label{fig:experiment_modem_light_sleep}
 \end{figure}
 
-Fig. \ref{fig:experiment_deep_sleep} describes the experimental setup that was used to perform tests on the deep sleep mode.
-After the \textit{enterDeepSleep} step, the ESP8266 sleeps for $15min$ and starts the sequence again.
+Fig. \ref{fig:experiment_deep_sleep} describes the experimental setup that was used to perform the tests on the deep sleep mode.
+After the \textit{enterDeepSleep} step, the ESP8266-01 sleeps for $15min$ and starts the sequence again.
 The difference between deep sleep and modem / light sleep mode is, that the controller restarts the programm everytime it wakes up from the deep sleep mode.
 \begin{figure}[h]
     \centering
@@ -60,4 +60,36 @@ Fig. \ref{fig:deep_sleep} shows the power consumtion during sleep and wake phase
     \includegraphics[width = \linewidth]{fig/deep_sleep.png}
     \caption{During deep sleep mode (green), the power consumption drops to $16 \mu A$}
     \label{fig:deep_sleep}
+\end{figure}
+
+\subsubsection{Comparison}
+The comparison of the three different sleep modes is based on the above described setup.
+Table \ref{tab:sleep_modes_15min} shows the measured energy consumption in Coloumb which is equal to $[As]$.
+The average power consumption in $[mA]$ is also listed.
+
+\begin{table}[htbp]
+\caption{Measured sleep power consumptions}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Sleep mode}&\textbf{Used energy $[As]$}&\textbf{Average current $[mA]$}\\
+\hline
+\textbf{Modem sleep} & 323.77As & 36.9mA\\
+\textbf{Light sleep} & 182.31As & 20.46mA\\
+\textbf{Deep sleep}  & 1.12As   & 0.127mA\\
+\hline
+\end{tabular}
+\label{tab:sleep_modes_15min}
+\end{center}
+\end{table}
+
+By using the light sleep mode instead of the modem sleep mode, we were able the reduce the energy consumption by a factor of $\approx 1.7$.
+In addition, by using the deep sleep, we managed to reduce the energy consumption by a factor of $\approx 290$.
+These results clearly show the huge advantage of the deep sleep mode compared to the default enabled modem sleep mode.
+The Figure \ref{fig:sleep_compare_boxplot} illustrates in which range the power consumption is most often in the different modes.
+
+\begin{figure}[h]
+    \includegraphics[width = \linewidth]{fig/sleep_compare_boxplot.png}
+    \caption{Boxplot to illustrate in which rage the power consumption is most ofter. Y-Axis has a logerithmic scale.}
+    \label{fig:sleep_compare_boxplot}
 \end{figure}
