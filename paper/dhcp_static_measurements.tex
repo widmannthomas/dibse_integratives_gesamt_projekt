@@ -8,7 +8,7 @@ The ESP8266 WiFi library provides functionality to set a fixed IP address for ou
 
 \subsubsection{DHCP}
 As shown you can see in Fig. \ref{fig:dhcp}, the connection to the WiFi network by using DHCP takes approximately 5.5 seconds and there are three spikes where the ESP8266-01 takes 140-120 milliamps.
-In average, the energy consumption is about 68.9 milliamps and in total, it consumes about 0.0985$mAh$ in total as seen in Fig. \ref{fig:dhcp_boxplot}.
+In average, the energy consumption is about 68.9 milliamps and in total, it consumes about 0.0985$mAh$ as seen in Fig. \ref{fig:dhcp_boxplot}.
 It's mentionable that in this case, everytime the device connects to the network, it gets a new IP address. This happens because the lease time runs out before the device reconnects again.
 This can be optimized by setting longer lease times. When the lease time is long enough and the device doen't get a new IP address, it behaves like it's getting a static IP address on the energy consumption perspective.\\
 

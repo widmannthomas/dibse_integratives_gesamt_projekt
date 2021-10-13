@@ -1,7 +1,7 @@
 To answer the questions, we conducted an experiment which is divided into three individual parts.
 The indepentent variables are the three different sleep modes, how the WiFi connection is established (DHCP or static IP) and what packets are to sent (UDP or TCP).
 We used DHCP with a new MAC-address everytime a connection is established, except when analyzing the behaviour using a static IP address.\\
-The dependent variables are the energy consumption in milliamps and the consumption in amps per second and are therefore ratio scaled.
+The dependent variables are the energy consumption in $mA$ and the consumption in amps per second and are therefore ratio scaled.
 We used the ESP8266-01 microcontroller as main-device and an FTDI adapter to program it. We used the Arduino IDE with the version 1.8.16 to write and upload the desired sketch.\\
 When conducting, what impact the different sleep modes, the ESP8266-01 provides, have, the device will go immediately after the establishment of the WiFi connection over DHCP with a new MAC-address into the given sleep mode.\\
 When conducting, if using a static IP instead of DHCP has an impact, we connect the ESP8266-01 either with a static IP or with DHCP and, in case of DHCP, with a new MAC-address to the WiFi network and go immediately after into the deep sleep mode, to better see, what impact that approach has and how long the chosen method takes.\\
