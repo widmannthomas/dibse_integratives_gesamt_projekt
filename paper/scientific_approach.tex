@@ -1,19 +1,20 @@
 To answer the questions, we conducted an experiment which is divided into three individual parts.
-The indepentent variables are the three different sleep modes, how the WiFi connection is established (DHCP or static IP) and what packets are to sent (UDP or TCP).
-We used DHCP with a new MAC-address everytime a connection is established, except when analyzing the behaviour using a static IP address.\\
-The dependent variables are the energy consumption in $mA$ and the consumption in amps per second and are therefore ratio scaled.
-We used the ESP8266-01 microcontroller as main-device and an FTDI adapter to program it. We used the Arduino IDE with the version 1.8.16 to write and upload the desired sketch.\\
-When conducting, what impact the different sleep modes, the ESP8266-01 provides, have, the device will go immediately after the establishment of the WiFi connection over DHCP with a new MAC-address into the given sleep mode.\\
-When conducting, if using a static IP instead of DHCP has an impact, we connect the ESP8266-01 either with a static IP or with DHCP and, in case of DHCP, with a new MAC-address to the WiFi network and go immediately after into the deep sleep mode, to better see, what impact that approach has and how long the chosen method takes.\\
-When conducting, if there's an impact on energy consumption when using UDP instead of TCP, we connect the ESP8266-01 over DHCP with a new MAC-Address to the WiFi network, send either a TCP or UDP packet, disconnect, wait 2 seconds and repeat this sequence.\\
-During the experiment, the WiFi network operates like a normal network in a private household with several devices connected, so it's an experiment with realistic circumstances.\\
+The indepentent variables are the three different sleep modes, how the WiFi connection is established (DHCP or static IP) and what transmission protocol is used to send the data (UDP or TCP).
+We used DHCP with a random MAC address everytime a connection is established, except when analyzing the behaviour of using a static IP address.\\
+The dependent variables are the current consumption in $mA$ and the energy consumption in $As$. Both of them are ratio scaled.
+We used the ESP8266-01 microcontroller as main device and an FTDI (USB to serial) adapter to program it. 
+For programming, we used the Arduino IDE in version 1.8.16.\\
+When conducting, the impacts of different sleep modes, we used the setup described in Fig. \ref{fig:experiment_deep_sleep} and Fig. \ref{fig:experiment_modem_light_sleep}.\\
+When conducting, the differences of using a static IP instead of DHCP, we used the setup described in Fig. \ref{fig:experiment_static_ip} and Fig. \ref{fig:experiment_deep_sleep}.\\
+When conducting, if there's an impact on energy consumption when using UDP instead of TCP, we used the setup shown in Fig. \ref{fig:tcp_uml} and Fig. \ref{fig:udp_uml}.\\
+During the experiment, the WiFi network operates like a normal network in a private household with several devices connected, so it is an experiment with realistic circumstances.\\
 
 To measure the energy consumption, we used an INA219 module which measures the voltage $U_{shunt}$ on a shunt resistor $R_{shunt}$ that is caused by the current $I_{shunt}$ through it.
 The current $I_{shunt}$ can finaly be calculated by the ohm's law:
 \begin{equation*}
     I = \frac{U}{R}
 \end{equation*}
-To get a expressive result, we perfomed each experiment 10 times.
+To get an expressive result, we perfomed each experiment 10 times.
 
 
 

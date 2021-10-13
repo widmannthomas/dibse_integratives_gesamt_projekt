@@ -1,7 +1,7 @@
-The goal of each experiment was, to trace the current consumption of the ESP8266 during different tasks.
+The goal of each experiment was, to trace the current consumption of the ESP8266-01 during different tasks.
 For this, we used the following experimental setup:
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width = \linewidth]{fig/experimental_setup.png}
     \caption{Setup to measure the current consumption of the ESP8266.}
@@ -16,11 +16,10 @@ With a maximum current consumtion of $I_{max}=170 mA$ \cite{espressif_inc_esp826
     U_{shunt_{max}} &= 374mV
 \end{align*}
 
-This still leaves $3.3V - 0.374V = 2.926V$ for the ESP8266 which is slightly below the specified voltage range of $3V$ to $3.3V$ \cite{espressif_inc_esp8266_2016}.
-However, we had no issues during the experiments that were caused by this lack of voltage.\\
+This still leaves $3.3V - 0.374V = 2.926V$ for the ESP8266-01 which is slightly below the specified voltage range of $3V$ to $3.3V$ \cite{espressif_inc_esp8266_2016}.
+However, we had no issues like brownouts during the experiments that were caused by this lack of voltage.\\
 The INA219 measured the current consumption with a frequency of $f_{INA} = 500Hz$.
 A higher sampling rate would result into more accurate results but to prove the
 described power saving concepts it is accurate enough.
-In addition we added a direct connection between the ESP8266 and the Microcontroller
-to log optinaly the relevant parts.
+In addition, we added a direct connection between the ESP8266-01 and the measurement setup to optionally log the relevant parts.
 

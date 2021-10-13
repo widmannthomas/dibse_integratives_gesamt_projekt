@@ -16,9 +16,10 @@ The step \textit{setRandomMacAddress} makes sure that the ESP8266-01 always gets
     \label{fig:experiment_modem_light_sleep}
 \end{figure}
 
-Fig. \ref{fig:experiment_deep_sleep} describes the experimental setup that was used to perform the tests on the deep sleep mode.
-After the \textit{enterDeepSleep} step, the ESP8266-01 sleeps for $15min$ and starts the sequence again.
-The difference between deep sleep and modem / light sleep mode is, that the controller restarts the programm everytime it wakes up from the deep sleep mode.
+Fig. \ref{fig:experiment_deep_sleep} describes the experimental setup that we used to perform the tests with the deep sleep mode.
+After the \textit{enterDeepSleep} step, the ESP8266-01 sleeps for $15min$ and restarts the sequence again.
+The difference between deep sleep and modem / light sleep mode is, that the controller restarts the programm everytime it wakes up.\\
+TODO: CITE\\
 \begin{figure}[h]
     \centering
     \includegraphics[width = 0.7 \linewidth]{fig/sequence_deep_sleep.png}
@@ -27,9 +28,9 @@ The difference between deep sleep and modem / light sleep mode is, that the cont
 \end{figure}
 
 \subsubsection{Modem sleep}
-As mentioned in \ref{sec:modem_sleep}, the ESP8266 automatically disables the modem when there is no data transmission required.
+As mentioned in \ref{sec:modem_sleep}, the ESP8266-01 automatically disables the modem when there is no data transmission required.
 During transmission the module takes around $80mA$. During modem sleep, $20mA$ are needed.
-The modem wakes up every $100ms$ to keep the connection to the access point established.
+The modem wakes up every $100ms$ (beacon interval) to keep the connection to the access point established.
 Fig. \ref{fig:beacon_interval} shows the beacon interval of $100ms$. 
 The same behavior was observed in \cite{montori_is_2017}.
 
@@ -41,9 +42,9 @@ The same behavior was observed in \cite{montori_is_2017}.
 
 \subsubsection{Light sleep}
 As described in \ref{sec:light_sleep}, the light sleep mode disables the CPU when no task has to be processed.
-When a task has to be processed, the ESP8266 switches back into modem sleep.
+When a task has to be processed, the ESP8266-01 switches back into modem sleep.
 Fig. \ref{tab_sleep_modes} shows the change from light sleep (green) to modem sleep (red).
-It is clear to see that the ESP8266 still needs a lot of power when a beacon arrives (every $100ms$).
+It is clear to see that the ESP8266-01 still needs a lot of power when a beacon arrives (every $100ms$).
 
 \begin{figure}[h]
     \includegraphics[width = \linewidth]{fig/light_sleep.png}
@@ -54,18 +55,18 @@ It is clear to see that the ESP8266 still needs a lot of power when a beacon arr
 \subsubsection{Deep sleep}
 The deep sleep mode is the most efficient sleep mode, as described in \ref{sec:deep_sleep}. 
 We achieved a power consumption of only $20 \mu A$. 
-However, the ESP8266 takes a long time to reconnect to the WiFi network after the sleep phase.
-Fig. \ref{fig:deep_sleep} shows the power consumtion during sleep and wake phase.
+However, the ESP8266-01 takes a long time to reconnect to the WiFi network after waking up.
+Fig. \ref{fig:deep_sleep} shows the power consumtion during the sleep and operating phase.
 \begin{figure}[h]
     \includegraphics[width = \linewidth]{fig/deep_sleep.png}
-    \caption{During deep sleep mode (green), the power consumption drops to $16 \mu A$}
+    \caption{During deep sleep mode (green), the power consumption drops to $20 \mu A$}
     \label{fig:deep_sleep}
 \end{figure}
 
 \subsubsection{Comparison}
 The comparison of the three different sleep modes is based on the above described setup.
-Table \ref{tab:sleep_modes_15min} shows the measured energy consumption in Coloumb which is equal to $[As]$.
-The average power consumption in $[mA]$ is also listed.
+Table \ref{tab:sleep_modes_15min} shows the measured energy consumption in coloumb which is equal to $As$.
+The average power consumption in $mA$ is also listed.
 
 \begin{table}[htbp]
 \caption{Measured sleep power consumptions}
@@ -86,10 +87,10 @@ The average power consumption in $[mA]$ is also listed.
 By using the light sleep mode instead of the modem sleep mode, we were able the reduce the energy consumption by a factor of $\approx 1.7$.
 In addition, by using the deep sleep, we managed to reduce the energy consumption by a factor of $\approx 290$.
 These results clearly show the huge advantage of the deep sleep mode compared to the default enabled modem sleep mode.
-The Figure \ref{fig:sleep_compare_boxplot} illustrates in which range the power consumption is most often in the different modes.
+The Fig. \ref{fig:sleep_compare_boxplot} illustrates in which range the power consumption is most often in the different modes.
 
 \begin{figure}[h]
     \includegraphics[width = \linewidth]{fig/sleep_compare_boxplot.png}
-    \caption{Boxplot to illustrate in which rage the power consumption is most ofter. Y-Axis has a logerithmic scale.}
+    \caption{Boxplot to illustrate in which rage the power consumption is most often. Y-Axis has a logerithmic scale.}
     \label{fig:sleep_compare_boxplot}
 \end{figure}
