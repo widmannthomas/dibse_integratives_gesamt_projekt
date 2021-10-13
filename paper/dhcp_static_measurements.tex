@@ -4,19 +4,22 @@ To analyse the power consumption when connecting via DHCP or with a static IP, w
 \subsubsection{Experimental setup}
 The sequence of the test program for DHCP is the same as Fig. \ref{fig:experiment_deep_sleep} shows.
 Fig. \ref{fig:experiment_static_ip} shows the sequence when conducting the experiment using a static IP address.
-The ESP8266 WiFi library provides functionality to set a fixed IP address for our device.\\
+The ESP8266-01 WiFi library provides functionality to set a static IP address.\\
 
 \subsubsection{DHCP}
-As shown you can see in Fig. \ref{fig:dhcp}, the connection to the WiFi network by using DHCP takes approximately 5.5 seconds and there are three spikes where the ESP8266-01 takes 140-120 milliamps.
-In average, the energy consumption is about 68.9 milliamps and in total, it consumes about 0.0985$mAh$ as seen in Fig. \ref{fig:dhcp_boxplot}.
-It's mentionable that in this case, everytime the device connects to the network, it gets a new IP address. This happens because the lease time runs out before the device reconnects again.
-This can be optimized by setting longer lease times. When the lease time is long enough and the device doen't get a new IP address, it behaves like it's getting a static IP address on the energy consumption perspective.\\
+As shown in Fig. \ref{fig:dhcp}, the establishment of the connection to the network by using DHCP takes $\approx 5.5 s$.
+In average, the average current consumption is $\approx 68.9 mA$ and in total, it consumes about $0.3546 As \sigma = $ \textbf{TODO!!} as seen in Fig. \ref{fig:dhcp_boxplot}.
+It is mentionable that in this case, everytime the device connects to the network, it gets a new IP address. 
+This happens because the lease time runs out before the device reconnects again.
+This can be optimized by setting longer lease times. 
+When the lease time is long enough and the device doesn't get a new IP address, it takes around the same energy as using a static IP address.\\
 
 \subsubsection{Static IP address}
-In Fig. \ref{fig:static_ip} a connection interval to the WiFi network by using a static IP address is shown. The connection to the WiFi network by using a static IP address takes approximately 4.0 seconds. 
-The energy consumption is also in average about 68.9 milliamps and as the establishment of the connection takes less time, it consumes about 0.078$mAh$ in total as seen in Fig. \ref{fig:static_boxplot}.
+In Fig. \ref{fig:static_ip} a connection cycle to the WiFi network by using a static IP address is shown. 
+The connection to the WiFi network by using a static IP address takes $\approx 4 s$. 
+The average current consumption is $\approx 68.9 mA$.
+As the establishment of the connection takes less time, it consumes about $0.078 mAh$ \textbf{TODO: As} in total, as seen in Fig. \ref{fig:static_boxplot}.
 The duration of the establishment of the connection is shorter, because there is no commnucation with the DHCP server needed.
-
 
 
 \begin{figure}[h]

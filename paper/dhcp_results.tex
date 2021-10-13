@@ -1,0 +1,10 @@
+\subsection{DHCP and static IP}
+When choosing between using DHCP or a static IP, the use of a static IP is definitely less power consuming. 
+As seen in Fig. \ref{fig:dhcp} the duration of the connection establishment using DHCP is about $1.5 s$ longer compared to the use of a static IP address as shown in Fig. \ref{fig:static_ip}.
+Although, it is a huge factor how long the DHCP leases are.\\
+A little example: You have an ESP8266-01 that is in deep sleep and wakes up every half an hour. You are using DHCP to get an IP address. 
+The DHCP lease is about 20 minutes, so everytime the device wakes up, it requires a new IP address. Therefore more energy is consumed.
+Is the DHCP lease about one day, a new IP address is requiere only once per day. On the other remaining connection establishments, the same IP address is used. Therefore it is consuming roughly the same energy as using a static IP address.
+As seen in Fig. \ref{fig:static_boxplot}, using a static IP address consumes about $0.078 mAh$ \textbf{As} everytime a new connection is established.
+In comparison, the use of DHCP is consuming about $0.098 mAh$ \textbf{TODO} in total as seen in Fig. \ref{fig:dhcp_boxplot}.
+In summary, using a static IP address instead of DHCP consumes about $20.5\%$ less energy and when thinking of a device that wakes up 48 times a day, it will make a huge impact on the battery life.

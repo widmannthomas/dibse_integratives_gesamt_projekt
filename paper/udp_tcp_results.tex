@@ -1,7 +1,6 @@
 \subsection{UDP / TCP}
 To analyze the difference in power consumption between the two transmission methods,
-we compare them. In the analysis we pay attention to the elapsed time and the power consumption while the
-ESP8266 transmits. In the first comparsion, we compare 100 trasmitting cicles.
+we compared them. In the analysis, we paid attention to the elapsed time and power consumption during transmission. In the first comparison, 100 transmissions are compared.
 \linebreak
 \begin{table}[H]
     \begin{center}
@@ -30,11 +29,11 @@ ESP8266 transmits. In the first comparsion, we compare 100 trasmitting cicles.
     \label{fig:udp_tcp_boxplot_time}
     \end{figure}
 If we compare the elapsed time spent sending the 1000 bytes,
-we can save 96.0048$\pm$11.145 ms for a send cycle.
-As shown in Table\ref{tab:table3},
+we can save $96.0048 \pm 11.145 ms$ per cycle.
+As shown in Table \ref{tab:table3},
 we see that the range between the maximum and minimum send time for UDP is also much smaller.
-As described in Chapter \ref{udp:sci}, UDP has less overhead when sending.
-That's why it doesn't need energy to monitor sending cycle.
+As described in Chapter \ref{udp:sci}, UDP has less overhead while sending.
+That's because it doesn't need energy to monitor sending cycle.
 \begin{table}[H]
     \begin{center}
     \caption{Comparison TCP UDP}
@@ -61,15 +60,13 @@ That's why it doesn't need energy to monitor sending cycle.
     \caption{Power connsumption when sending data over TCP and UDP}
     \label{fig:udp_tcp_boxplot_As}
     \end{figure}
-In Table\ref{tab:table4} we compared the elapsed time while the ESP8266 sends.
-As expected, we get the same result.
-UDP requires only 44.03\%$\pm$6.07\% of the time compared to TCP.
-This gives us a saving of 0.00907018$\pm$0.00125 As while sending 1000 bytes.
+In Table\ref{tab:table4} we compared the elapsed time while the ESP8266-01 sends.
+As expected, we got the same result.
+UDP requires only $44.03\% \pm 6.07\%$ of the time compared to TCP.
+This gives us a saving of $0.00907018 \pm 0.00125 As$ while sending 1000 bytes.
 For example, in Fig.\ref{fig:udp_tcp_s_m},
-we compare the iteration 50 to see the differences between the two.
-The power consumption of UDP increases the first time the connection
-is started and the second part is exactly when it sends.
-In contrast, TCP requires much more power to establish the connection and waits before sending.
+we compared the fiftieth cycle to see the differences between them.
+In contrast, TCP requires much more power to establish the connection.
 \begin{figure}[H]
     \centering
     \includegraphics[width = 1 \linewidth]{fig/udp_tcp/udp_tcp_s_m.png}

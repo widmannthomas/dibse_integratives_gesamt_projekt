@@ -1,20 +1,18 @@
 \subsection{UDP / TCP}
 \label{udptcp:measure}
-To analyse the power consumption while sending data to an client we prepared a 
-experiment where we send data in a loop to a client over TCP and UDP.\\
+To analyse the power consumption while sending data to a server we prepared an 
+experiment where we periodically sent data over TCP and UDP.\\
 
 \subsubsection{Experimental setup}
-To measure the current consumption, we used the setup from Fig.\ref{fig:experiment_setup} 
+To measure the current consumption, we used the setup from Fig. \ref{fig:experiment_setup} 
 with the optional trigger.
-The reason for this trigger is that the ESP8266 iteratively checks the connection to the access point when it is idle.
-To distinguish between checking the connection and transmitting data, we log the transmission process.
+The reason for this trigger is that the ESP8266-01 iteratively checks the connection to the access point when it is idle.
+To distinguish between checking the connection and transmitting data, we trace the transmission process.
 In order to analyze the power consumption when sending data via UDP,
-we have prepared a function that transfers data from an ESP8266 to a PC via a WiFi connection.
-Whiten, we listen to an open port with netcat. To study the power consumption of TCP,
-we will send data to a client over TCP using the ESP8266WiFi library. In our experiment,
-we prepared random packets to disable the TCP caching system.
-We then processed 100 iterations of the function in Fig.\ref{fig:tcp_uml}
-to gather enough values.
+we prepared a function that transfers data from an ESP8266-01 to the server.
+To study the power consumption of TCP,
+we sent data to a client over TCP using the ESP8266WiFi library. In our experiment, we sent random packets.
+We then processed 100 cycles of the function in Fig. \ref{fig:tcp_uml} to gather enough values.
 \newline
 \begin{figure}[H]
 \centering
@@ -22,9 +20,9 @@ to gather enough values.
 \caption{Process to sending data over TCP}
 \label{fig:tcp_uml}
 \end{figure}
-As expected, when we send data over TCP, we get a lot of different results.
-This is because we have to wait for the recipient response to send the data.
-\linebreak\linebreak
+As expected, when we sent data over TCP, we got a lot of different results.
+This is because TCP waits for the recipients response to send the data. \cite{postel1981transmission}
+\newline
 \begin{table}[htbp]
 \begin{center}
 \caption{Results TCP}
@@ -44,10 +42,11 @@ max & 396 & 0.032600\\
 \end{tabular}
 \end{center}
 \end{table}
-\linebreak
+\newline
 If we look at the results, we see that the current fluctuates a lot,
-this is because TCP-buil-in system is monitoring the trasmitting 
-and waiting for the recipient to receive the packet.\linebreak\linebreak
+this is because TCP is monitoring the transmission 
+and waits for the recipient to receive the packet.
+\newline
 \begin{figure}[H]
 \centering
 \includegraphics[width = 1 \linewidth]{fig/udp_tcp/tcp_s_m.png}
@@ -55,7 +54,7 @@ and waiting for the recipient to receive the packet.\linebreak\linebreak
 \label{fig:tcp_s_m}
 \end{figure}
 
-According these, also the elapsed time is 236$\pm$13.63\% ms
+According to this, also the elapsed time is $236 \pm 13.63\% ms$
 \linebreak
 \begin{figure}[H]
 \centering
@@ -63,26 +62,26 @@ According these, also the elapsed time is 236$\pm$13.63\% ms
 \caption{Elapsed time while sending over TCP}
 \label{fig:tcp_boxplot_time}
 \end{figure}
-In addition, the power consumption is 0.0206$\pm$12.58\% As
+In addition, the power consumption is $0.0206 \pm 12.58\% As$
 \linebreak
 \begin{figure}[H]
 \centering
 \includegraphics[width = 0.7 \linewidth]{fig/udp_tcp/tcp_boxplot_As.png}
-\caption{Ampere seconds while sending over TCP}
+\caption{Power consumption while sending over TCP}
 \label{fig:tcp_boxplot_As}
 \end{figure}
 \subsubsection{UDP}
 To analyse the power consumption while sending data over UDP we prepared a procedure which
-transfer data from an ESP8266 to a generic notbook  via UDP from the WiFiUdp library.
+transfers data from an ESP8266-01 to a server. For this, we used the WiFiUdp library.
 In order to be able to compare with TCP, we create the process in Fig.\ref{fig:udp_uml}.
 \linebreak\
 \begin{figure}[H]
 \centering
 \includegraphics[width = 0.7 \linewidth]{fig/udp_tcp/udp_uml.png}
-\caption{Process to sending data over UDP}
+\caption{Process to send data over UDP}
 \label{fig:udp_uml}
 \end{figure}
-As expected, when we send data over UDP, we get more uniform values.
+As expected, when we sent data over UDP, we got more uniform values.
 \linebreak\linebreak
 \begin{table}[H]
 \begin{center}
@@ -103,16 +102,16 @@ max & 98 & 0.010900\\
 \end{tabular}
 \end{center}
 \end{table}
-If we look at the results, we see that the current is almost stable,
-this is because UDP is not waiting for the recipient to receive the packet.
-When it starts it sends the Packages simultaneously.\linebreak\linebreak
+If we look at the results, we see that the current is almost stable.
+This is because UDP is not waiting for the recipient to receive the packet.
+When it starts, it sends the packages simultaneously.\linebreak\linebreak
 \begin{figure}[H]
 \centering
 \includegraphics[width = 1 \linewidth]{fig/udp_tcp/udp_s_m.png}
 \caption{Sending data over UDP}
 \label{fig:udp_s_m}
 \end{figure}
-According these, also the elapsed time is 96$\pm$1.10\% ms
+Accordingly, the elapsed time is $96 \pm 1.10\% ms$
 \linebreak
 \begin{figure}[H]
 \centering
@@ -120,11 +119,11 @@ According these, also the elapsed time is 96$\pm$1.10\% ms
 \caption{Elapsed time while sending over UDP}
 \label{fig:udp_boxplot_time}
 \end{figure}
-In addition, the power consumption is 0.0091$\pm$6.38\% As
+In addition, the power consumption is $0.0091 \pm 6.38\% As$
 \linebreak
 \begin{figure}[H]
 \centering
 \includegraphics[width = 0.7 \linewidth]{fig/udp_tcp/udp_boxplot_As.png}
-\caption{Ampere seconds while sending over UDP}
+\caption{Power consumption while sending over UDP}
 \label{fig:udp_boxplot_As}
 \end{figure}
