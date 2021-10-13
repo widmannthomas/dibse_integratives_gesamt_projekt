@@ -18,7 +18,7 @@
 \begin{document}
 
 \title{Improving the energy efficiency of battery powered WiFi sensors.\\
-{\footnotesize \textsuperscript{*}Using the ESP8266 MCU as an example.}
+{\footnotesize \textsuperscript{*}Using the ESP8266-01 MCU as an example.}
 % \thanks{Identify applicable funding agency here. If none, delete this.}
 }
 
@@ -44,11 +44,11 @@ thomas.widmann@icloud.com}
 \maketitle
 
 \begin{abstract}
-As IoT devices gain on popularity in sectors such as healthcare and smart home environments and a lot of these IoT devices are battery powered and difficult to reach and maintain, it's crucial for them to have a long battery life.
+As IoT devices gain on popularity in sectors such as healthcare and smart home environments and as a lot of these IoT devices are battery powered and difficult to reach and maintain, it's crucial for them to have a long battery life.
 Per definition, an IoT device has to connect with other devices or the internet. 
 There may be a lot of communication protocols available that do the job but in our case, we are using WiFi because that technology is available in nearly every household and most smart home applications are using this technology.
 In order to increase the battery life of such an IoT device, there are a lot of possible options available.
-Three of these possible options are evaluated, described. Their impact on the energy efficiency is proved by conducting experiments.
+Three of these possible options are evaluated, described. Their impact on the energy efficiency is shown by conducting experiments.
 
 
 \end{abstract}
@@ -84,6 +84,20 @@ component, formatting, style, styling, insert
 \input{udp_tcp_measurements.tex}
 
 \section{Results} \label{sec_results}
+
+\subsection{DHCP and static IP}
+When choosing between using DHCP or a static IP, the use of a static IP is definitely less power consuming. 
+As seen in Fig. \ref{fig:dhcp} the connection time using DHCP is about 1.5 seconds longer compared to the connection time of using a static IP address as shown in Fig. \ref{fig:static_ip}.
+Although, it is a huge factor how long the DHCP leases are.\\
+A little example: You have an ESP8266-01 that is in deep sleep and wakes up every half an hour. You are using DHCP to get an IP address. 
+The DHCP lease is about 20 minutes, so everytime the device wakes up and connects to the internet, a new IP address is given by the DHCP server and therefore more energy is consumed.
+Is the DHCP lease about one day, a new IP address is given only once per day and on the other remaining connection establishments, the same IP address is given, so it's consuming roughly the same energy as when using a static IP address.
+As seen in Fig. \ref{fig:static_boxplot}, using a static IP address consumes about 0.078$mAh$ everytime a new connection is established.
+In comparison, the use of DHCP is consuming about 0.098$mAh$ in total as seen in Fig. \ref{fig:dhcp_boxplot}.
+In summary. using a static IP address instead of DHCP consumes about 20.5\% less energy and when thinking of a device that wakes up 48 times a day, this will make a huge impact on the battery life.
+
+
+
 
 \section{Conclusions}
 

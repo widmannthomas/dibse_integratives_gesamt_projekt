@@ -1,13 +1,13 @@
 \subsection{DHCP}
-In order to connect the ESP8266 and in general every device with a Wi-Fi module to the Internet, it needs to have an IP-Address, so it can be identified by the router. 
+In order to connect the ESP8266-01 and in general every device with a Wi-Fi module to the Internet, it needs to have an IP-Address, so it can be identified by the router. 
 There exist two possibilities to gain an IP-Address.\\ The first one is to give the device a static IP-Address. As the name suggests, the IP-Address of the device will never change and it will be static. On the other hand, the IP-Address can be given dynamically.
 The protocol, that gives dynamically IP-Addresses to the Wi-Fi clients is called DHCP (Dynamic Host Configuration Protocol).
-It works as follows: When a device wants to connect to a network, a request to use an address for a time period to the DHCP server is sent. This time period is called "lease" \cite{droms1997rfc2131}. Then the DHCP server responds with the defined network configuration and an IP address.\\
+It works as follows: When a device wants to connect to a network, a request to use an address for a time period to the DHCP server is sent. This time period is called "lease time" \cite{droms1997rfc2131}. Then the DHCP server responds with the defined network configuration and an IP address.\\
 The lease-time is defined by the DHCP server. When the time period is running out, the client has to send another request to the DHCP server. It's common that this happens after the half of the lease time.
 If a DHCP server doesn't receive a renew request within the given lease time, the lease of the IP address expires and the client's IP address is used for possible allocation to other clients \cite{10.1145/1298306.1298315}.
 Choosing the right lease-time depends on the given conditions. A huge factor is the size of the network and the grade of mobility of the connected devices. When there is a high number of mobile devices connected to the network and they don't stay very long in it. It's recommended that a shorter lease time is chosen, to prevent wasting valuable IP addresses in a sometimes small address pool \cite{khadilkar2007usage}.
 But using a shorter lease-time leads to a bigger network overhead \cite{li_how_2018}. In further sequence, shorter lease times lead to more energy consumption of IoT devices, because the proccess of getting a new valid IP address takes energy.\\
-It is proven that using a static IP address rather than using DHCP for IP address allocation is less energy consuming on IoT devices. Longer lease times can also improve the energy efficiency \cite{department_of_computer_engineering_mehmet_akif_ersoy_university_faculty_of_engineering_and_architecture_burdur_turkey_power_2020}. This understanding helps us to improve the energy efficiency on the ESP8266.
+It is proven that using a static IP address rather than using DHCP for IP address allocation is less energy consuming on IoT devices. Longer lease times can also improve the energy efficiency \cite{department_of_computer_engineering_mehmet_akif_ersoy_university_faculty_of_engineering_and_architecture_burdur_turkey_power_2020}. This understanding helps us to improve the energy efficiency on the ESP8266-01.
 
 
 
