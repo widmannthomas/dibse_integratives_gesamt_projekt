@@ -25,19 +25,19 @@ Table \ref{tab_sleep_modes} summarises the capabilities and typical current cons
 \end{center}
 \end{table}
 
-\subsubsection{Modem sleep}
+\subsubsection{Modem sleep} \label{sec:modem_sleep}
 Modem sleep is the default sleep mode of the ESP8266 and is recommended for applications that require a real time CPU control. \cite{mesquita_assessing_2018}
 By enabling the modem sleep, the ESP8266 will turn off the WiFi modem between the DTIM beacons. 
 This improves the power consumption of the system and has the advantage that the system stays connected to the AP.\\
 A typical use case is a WiFi controlled light bulb that provides real time light control.\cite{espressif_inc_esp8266_2016}
 
-\subsubsection{Light sleep}
+\subsubsection{Light sleep} \label{sec:light_sleep}
 The light sleep mode is similar to the modem sleep mode with the additional improvement that the internal clock is powered off and the CPU is suspended when there are no tasks to execute.\\
 According to the datasheet \cite{espressif_inc_esp8266_2016}, it takes less than $3ms$ to switch back into modem sleep mode.\\
 This mode can be used when the application needs to stay connected to the access point 
 and needs to responde to incoming data. The CPU is powered off when no data receives.
 
-\subsubsection{Deep sleep}
+\subsubsection{Deep sleep} \label{sec:deep_sleep}
 For ultra low power applications, the ESP8266 provides a deep sleep mode.
 In this mode are all modules disabled except the real time clock (RTC) which can be used to wake up the controller periodically.
 When the controller is in the deep sleep mode, it can only be woken up by applying a pulse to the RST pin.
