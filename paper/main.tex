@@ -9,6 +9,7 @@
 \usepackage{amsmath}
 \usepackage{tabularx}
 \usepackage[style=ieee,sortcites=true,maxbibnames=100]{biblatex}
+\usepackage{float}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
@@ -85,7 +86,6 @@ component, formatting, style, styling, insert
 
 \section{Results}
 
-\input{udp_tcp_results.tex}
 
 \subsection{DHCP and static IP}
 When choosing between using DHCP or a static IP, the use of a static IP is definitely less power consuming. 
@@ -98,6 +98,7 @@ As seen in Fig. \ref{fig:static_boxplot}, using a static IP address consumes abo
 In comparison, the use of DHCP is consuming about 0.098$mAh$ in total as seen in Fig. \ref{fig:dhcp_boxplot}.
 In summary. using a static IP address instead of DHCP consumes about 20.5\% less energy and when thinking of a device that wakes up 48 times a day, this will make a huge impact on the battery life.
 
+\input{udp_tcp_results.tex}
 
 
 
