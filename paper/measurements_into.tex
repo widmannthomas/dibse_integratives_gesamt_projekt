@@ -19,5 +19,8 @@ With a maximum current consumtion of $I_{max}=170 mA$ \cite{espressif_inc_esp826
 This still leaves $3.3V - 0.374V = 2.926V$ for the ESP8266 which is slightly below the specified voltage range of $3V$ to $3.3V$ \cite{espressif_inc_esp8266_2016}.
 However, we had no issues during the experiments that were caused by this lack of voltage.\\
 The INA219 measured the current consumption with a frequency of $f_{INA} = 500Hz$.
-A higher sampling rate would result into more accurate results but to prove the described power saving concepts it is accurate enough.
+A higher sampling rate would result into more accurate results but to prove the
+described power saving concepts it is accurate enough.
+In addition we added a direct connection between the ESP8266 and the Microcontroller
+to log optinaly the relevant parts.
 
