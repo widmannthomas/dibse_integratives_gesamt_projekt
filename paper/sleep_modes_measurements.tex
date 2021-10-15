@@ -6,7 +6,7 @@ Therefore, we used the following experimental setup:
 \textit{The device should measure the temperature with an interval of $T_{measure} = 15min$.
 MQTT should be used to publish the measured data to other devices.}
 
-Fig. \ref{fig:experiment_modem_light_sleep} shows the test programm for the modem and light sleep.
+Fig. \ref{fig:experiment_modem_light_sleep} shows the test program for the modem and light sleep.
 The step \textit{setRandomMacAddress} makes sure that the ESP8266-01 always gets a new IP address.
 
 \begin{figure}[H]
@@ -18,8 +18,7 @@ The step \textit{setRandomMacAddress} makes sure that the ESP8266-01 always gets
 
 Fig. \ref{fig:experiment_deep_sleep} describes the experimental setup that we used to perform the tests with the deep sleep mode.
 After the \textit{enterDeepSleep} step, the ESP8266-01 sleeps for $15min$ and restarts the sequence again.
-The difference between deep sleep and modem / light sleep mode is, that the controller restarts the programm everytime it wakes up.\\
-TODO: CITE\\
+The difference between deep sleep and modem / light sleep mode is, that the controller restarts the program every time it wakes up.\\
 \begin{figure}[H]
     \centering
     \includegraphics[width = 0.7 \linewidth]{fig/sequence_deep_sleep.png}
@@ -36,7 +35,7 @@ The same behavior was observed in \cite{montori_is_2017}.
 
 \begin{figure}[H]
     \includegraphics[width = \linewidth]{fig/beacon_interval.png}
-    \caption{The power consumption increases to $\approx 80mA$, everytime a beacon arrives.}
+    \caption{The power consumption increases to $\approx 80mA$, every time a beacon arrives.}
     \label{fig:beacon_interval}
 \end{figure}
 
@@ -55,8 +54,8 @@ It is clear to see that the ESP8266-01 still needs a lot of power when a beacon 
 \subsubsection{Deep sleep}
 The deep sleep mode is the most efficient sleep mode, as described in \ref{sec:deep_sleep}. 
 We achieved a power consumption of only $20 \mu A$. 
-However, the ESP8266-01 takes a long time to reconnect to the WiFi network after waking up.
-Fig. \ref{fig:deep_sleep} shows the power consumtion during the sleep and operating phase.
+However, the ESP8266-01 takes a long time to reconnect to the Wi-Fi network after waking up.
+Fig. \ref{fig:deep_sleep} shows the power consumption during the sleep and operating phase.
 \begin{figure}[H]
     \includegraphics[width = \linewidth]{fig/deep_sleep.png}
     \caption{During deep sleep mode (green), the power consumption drops to $20 \mu A$}
