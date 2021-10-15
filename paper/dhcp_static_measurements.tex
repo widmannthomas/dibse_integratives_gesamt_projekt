@@ -4,7 +4,13 @@ To analyse the power consumption when connecting via DHCP or with a static IP, w
 \subsubsection{Experimental setup}
 The sequence of the test program for DHCP is the same as Fig. \ref{fig:experiment_deep_sleep} shows.
 Fig. \ref{fig:experiment_static_ip} shows the sequence when conducting the experiment using a static IP address.
-The ESP8266-01 WiFi library provides functionality to set a static IP address.\\
+The ESP8266-01 WiFi library provides functionality to set a static IP address.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 0.35 \linewidth]{fig/sequence_static_ip.png}
+    \caption{Experimental setup for use of a static IP.}
+    \label{fig:experiment_static_ip}
+\end{figure}
 
 \subsubsection{DHCP}
 As shown in Fig. \ref{fig:dhcp}, the establishment of the connection to the network by using DHCP takes $\approx 5.5 s$.
@@ -14,42 +20,30 @@ This happens because the lease time runs out before the device reconnects again.
 This can be optimized by setting longer lease times.
 When the lease time is long enough and the device doesn't get a new IP address, it takes around the same energy as using a static IP address.\\
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width =\linewidth]{fig/dhcp.png}
+    \caption{The establishment of the connection with DHCP takes $\approx 5.5s$.}
+    \label{fig:dhcp}
+\end{figure}
+
 \subsubsection{Static IP address}
 In Fig. \ref{fig:static_ip} a connection cycle to the WiFi network by using a static IP address is shown.
 The connection to the WiFi network by using a static IP address takes $\approx 4 s$.
 The average current consumption is $\approx 68.9 mA$.
-As the establishment of the connection takes less time, it consumes about $0.2821 As\ (\sigma = 0.00085)$  in total, as seen in Fig. \ref{fig:static_boxplot}.
+As the establishment of the connection takes less time, it consumes about $0.2821 As\ (\sigma = 0.00085)$  in total, as seen in Fig. \ref{fig:dhcp_boxplot}.
 The duration of the establishment of the connection is shorter, because there is no commnucation with the DHCP server needed.
 
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width = 0.35 \linewidth]{fig/sequence_static_ip.png}
-    \caption{Experimental setup for use of a static IP.}
-    \label{fig:experiment_static_ip}
-\end{figure}
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width =\linewidth]{fig/static_ip.png}
-    \caption{Experimental setup for use of a static IP.}
+    \caption{The establishment of the connection with a static IP takes $\approx 4s$.}
     \label{fig:static_ip}
 \end{figure}
-\begin{figure}[h]
+
+\begin{figure}[H]
     \centering
-    \includegraphics[width =\linewidth]{fig/dhcp.png}
-    \caption{Experimental setup for use of DHCP with new IP address every reconnect.}
-    \label{fig:dhcp}
-\end{figure}
-\begin{figure}[h]
-    \centering
-    \includegraphics[width =\linewidth]{fig/dhcp_boxplot.png}
-    \caption{$As$ of one connection interval with DHCP.}
+    \includegraphics[width =\linewidth]{fig/dhcp_static_boxplot.png}
+    \caption{$As$ of one connection interval DHCP (left) and static IP (right).}
     \label{fig:dhcp_boxplot}
 \end{figure}
-\begin{figure}[h]
-    \centering
-    \includegraphics[width =\linewidth]{fig/static_boxplot.png}
-    \caption{$As$ of one connection interval with Static IP.}
-    \label{fig:static_boxplot}
-\end{figure}
-\pagebreak

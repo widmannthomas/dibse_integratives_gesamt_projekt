@@ -6,25 +6,26 @@ we compared them. In the analysis, we paid attention to the elapsed time and pow
     \begin{center}
     \caption{Comparison TCP UDP}
     \label{tab:table3}
-    \renewcommand{\arraystretch}{1.8}
-    \begin{tabular}{l|c|c|r}
-    & \textbf{TCP} & \textbf{UDP} & \textbf{difference} \\
-    & \multicolumn{2}{c|}{elapsed time [ms]} & \textbf{\%}\\
-    \hline
-    count & 100 & 100 & \\
-    mean  & 241.57 & 95.97 & 39.73 \\
-    std   & 32.115403 & 1.058444 & 3.30 \\
-    min   & 193.0 & 94.0 & 48.70 \\
-    25\%  & 219.0 & 95.0 & 43.38 \\
-    50\%  & 236.0 & 96.0 & 40.68 \\
-    75\%  & 257.0 & 97.0 & 37.74 \\
-    max   & 396.0 & 98.0 & 24.75 \\
+    \begin{tabular}{|l|c|c|r|}
+        \hline
+        & \textbf{TCP} & \textbf{UDP} & \textbf{difference} \\
+        & \multicolumn{2}{c|}{elapsed time [ms]} & \textbf{\%}\\
+        \hline
+        count & 100 & 100 & \\
+        mean  & 241.57 & 95.97 & 39.73 \\
+        std   & 32.115403 & 1.058444 & 3.30 \\
+        min   & 193.0 & 94.0 & 48.70 \\
+        25\%  & 219.0 & 95.0 & 43.38 \\
+        50\%  & 236.0 & 96.0 & 40.68 \\
+        75\%  & 257.0 & 97.0 & 37.74 \\
+        max   & 396.0 & 98.0 & 24.75 \\
+        \hline
     \end{tabular}
     \end{center}
 \end{table}
 \begin{figure}[H]
     \centering
-    \includegraphics[width = 0.9 \linewidth]{fig/udp_tcp/udp_tcp_boxplot_time.png}
+    \includegraphics[width = 0.9 \linewidth]{fig/udp_tcp_elapsed_time_boxplot.png}
     \caption{Elapsed time when sending data over TCP and UDP}
     \label{fig:udp_tcp_boxplot_time}
     \end{figure}
@@ -36,27 +37,28 @@ As described in Chapter \ref{udp:sci}, UDP has less overhead while sending.
 That's because it doesn't need energy to monitor sending cycle.
 \begin{table}[H]
     \begin{center}
-    \caption{Comparison TCP UDP}
-    \label{tab:table4}
-    \renewcommand{\arraystretch}{1.8}
-    \begin{tabular}{l|c|c|r}
-    & \textbf{TCP} & \textbf{{UDP}} & \textbf{difference} \\
-    & \multicolumn{2}{c|}{ power consumption [As]} & \textbf{\%}\\
-    \hline
-    count & 100 & 100 & \\
-    mean   & 0.021031 & 0.009227 & 43.87 \\
-    std    & 0.002591 & 0.000581 & 22.42 \\
-    min    & 0.0163 & 0.0082 & 50.31 \\
-    25\%   & 0.019175 & 0.0088 & 45.89 \\
-    50\%   & 0.0206 & 0.0091 & 44.17 \\
-    75\%   & 0.022325 & 0.0096 & 43.00 \\
-    max    & 0.0326 & 0.0109 & 33.44 \\
-    \end{tabular}
+        \caption{Comparison TCP UDP}
+        \label{tab:table4}
+        \begin{tabular}{|l|c|c|r|}
+            \hline
+            & \textbf{TCP} & \textbf{{UDP}} & \textbf{difference} \\
+            & \multicolumn{2}{c|}{ power consumption [As]} & \textbf{\%}\\
+            \hline
+            count & 100 & 100 & \\
+            mean   & 0.021031 & 0.009227 & 43.87 \\
+            std    & 0.002591 & 0.000581 & 22.42 \\
+            min    & 0.0163 & 0.0082 & 50.31 \\
+            25\%   & 0.019175 & 0.0088 & 45.89 \\
+            50\%   & 0.0206 & 0.0091 & 44.17 \\
+            75\%   & 0.022325 & 0.0096 & 43.00 \\
+            max    & 0.0326 & 0.0109 & 33.44 \\
+            \hline
+        \end{tabular}
     \end{center}
 \end{table}
 \begin{figure}[H]
     \centering
-    \includegraphics[width = 0.9 \linewidth]{fig/udp_tcp/udp_tcp_boxplot_As.png}
+    \includegraphics[width = 0.9 \linewidth]{fig/udp_tcp_power_consumption.png}
     \caption{Power connsumption when sending data over TCP and UDP}
     \label{fig:udp_tcp_boxplot_As}
     \end{figure}
