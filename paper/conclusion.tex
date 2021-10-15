@@ -1,0 +1,19 @@
+In view of the widespread use of IoT devices and WLAN networks, in this paper we have looked at various methods to extend the battery life of WLAN sensors.
+To analyze the different methods, we conducted experiments with an ESP8266-01 MCU.
+First we analyzed the different sleep modes that are provided by the framework. 
+Furthermore, we looked at the impact of DHCP to the power consumption. Therefore, we compared it to the use of a static IP address.
+Last but not least, the affects of using UDP instead of TCP was analyzed by us.
+\\
+We found that the use of a static IP address instead of DHCP improves the power consumption $\approx 20.5\%$.
+This is because we save the communication with the DHCP server. Therefore, time and energy is saved.
+\\
+Using UDP took $\approx 43.9\%$ less energy than TCP. 
+The reason for this improvement is, that UDP does not need additional communication between the client and the server.
+Nevertheless, you have to be aware that UDP does not guarantee that the data arrives at the endpoint.
+\\
+The biggest improvement was achieved, by using the deep sleep mode instead of using modem or light sleep.
+This made it possible, to reduce the power consumption by $\approx 290\%$.
+The reason for this big improvement is, that the deep sleep mode disables nearly every module in the MCU.
+\\
+Nevertheless, WiFi still needs a lot of energy to communicate with the network and is not optimized for battery powered IoT devices.
+
