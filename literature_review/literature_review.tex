@@ -67,8 +67,8 @@
 % +----------------+
 
 \createConferencePaperHeader{montori_is_2017}
-The author of this study analyzed the performance of WiFi in terms of energy efficiency.
-Therefor some experiments were made with the ESP-12 which is a WiFi capable MCU.
+The author of this study analyzed the performance of Wi-Fi in terms of energy efficiency.
+Therefor some experiments were made with the ESP-12 which is a Wi-Fi capable MCU.
 Specially the impact of battery types, authentication mode and deep sleep cycles on the energy consumption was investigated.
 Furthermore, the author described the basic idea behind the different sleep modes of the MCU.
 By using the capability of setting the MCU into deep sleep, the author investigated the impact of different
@@ -155,7 +155,7 @@ The author of this paper analyzes the impact of different lease times on network
 \\
 \paragraph{Importance of this paper:}
 Also IoT sensors need an IP address to communicate for example with a MQTT broker or other devices in the network.
-Every time the sensor wakes up from its deep sleep mode, it reconnects to the associated WiFi network and sends a DHCP request to get an IP address.
+Every time the sensor wakes up from its deep sleep mode, it reconnects to the associated Wi-Fi network and sends a DHCP request to get an IP address.
 The process of getting a valid IP address takes energy. It would for sure make sense to improve this process. 
 An idea would be to detect the type of the device by its MAC address and use a longer lease time. This would also require to store the previous IP configuration on a not volatile storage during the deep sleep phase.
 
@@ -230,7 +230,7 @@ It's good to know, what sleep-modes we can work with, but it's more important to
 This article deals with optimizing the energy consumption of intelligent sensors, actuators and other devices used for the smart home. These devices are mostly battery-operated and communicate via radio.
 As a radio standard, WLAN is usually used, as this technology is already available in most households. The disadvantage of this radio standard is that it has a high energy consumption compared to other standards. This leads to a high maintenance effort. However, since the devices are becoming cheaper and cheaper and WLAN is more secure than competing wireless standards, this article is looking for a suitable optimization.
 An ESP 03 was used in the first test setup, which uses the same chipset as the one we use for our tests.
-The deep sleep mode was used in the test runs, in which the chipset uses as little energy as possible when idling. However, when using a dynamic IP, this had the disadvantage that the module had to request a new IP via DHCP every time it woke up. In order to achieve this as efficiently as possible, the ESP03 was connected to an MSP430 in the second attempt, which can carry out the process more efficiently. As shown in the second attempt, this is even more effective from a transmission interval of over 1.5 hours than the pure ESP03 with a static IP address. With shorter transmission intervals, the energy that has to be generated for both modules is greater than that which the ESP03 needs to establish the connection. In order to substantiate the results, a comparison was made with the widely used ATMega328P. This works with a 433 MHz technology. This is very energy-efficient, but leads to losses in terms of transmission power and security. By optimizing WiFi technology, this technology becomes more energy-efficient and increases the transmission power and security of sensors, actuators and other devices for the smart home.
+The deep sleep mode was used in the test runs, in which the chipset uses as little energy as possible when idling. However, when using a dynamic IP, this had the disadvantage that the module had to request a new IP via DHCP every time it woke up. In order to achieve this as efficiently as possible, the ESP03 was connected to an MSP430 in the second attempt, which can carry out the process more efficiently. As shown in the second attempt, this is even more effective from a transmission interval of over 1.5 hours than the pure ESP03 with a static IP address. With shorter transmission intervals, the energy that has to be generated for both modules is greater than that which the ESP03 needs to establish the connection. In order to substantiate the results, a comparison was made with the widely used ATMega328P. This works with a 433 MHz technology. This is very energy-efficient, but leads to losses in terms of transmission power and security. By optimizing Wi-Fi technology, this technology becomes more energy-efficient and increases the transmission power and security of sensors, actuators and other devices for the smart home.
 \\
 \paragraph{Importance of this paper:}
 This article uses the same microcontroller architecture so we can refer to the results.

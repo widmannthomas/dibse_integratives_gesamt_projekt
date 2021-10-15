@@ -4,7 +4,7 @@ To analyse the power consumption when connecting via DHCP or with a static IP, w
 \subsubsection{Experimental setup}
 The sequence of the test program for DHCP is the same as Fig. \ref{fig:experiment_deep_sleep} shows.
 Fig. \ref{fig:experiment_static_ip} shows the sequence when conducting the experiment using a static IP address.
-The ESP8266-01 WiFi library provides functionality to set a static IP address.
+The ESP8266-01 Wi-Fi library provides functionality to set a static IP address.
 \begin{figure}[H]
     \centering
     \includegraphics[width = 0.35 \linewidth]{fig/sequence_static_ip.png}
@@ -28,8 +28,8 @@ When the lease time is long enough and the device doesn't get a new IP address, 
 \end{figure}
 
 \subsubsection{Static IP address}
-In Fig. \ref{fig:static_ip} a connection cycle to the WiFi network by using a static IP address is shown.
-The connection to the WiFi network by using a static IP address takes $\approx 4 s$.
+In Fig. \ref{fig:static_ip} a connection cycle to the Wi-Fi network by using a static IP address is shown.
+The connection to the Wi-Fi network by using a static IP address takes $\approx 4 s$.
 The average current consumption is $\approx 68.9 mA$.
 As the establishment of the connection takes less time, it consumes about $0.2821 As\ (\sigma = 0.00085)$  in total, as seen in Fig. \ref{fig:dhcp_boxplot}.
 The duration of the establishment of the connection is shorter, because there is no commnucation with the DHCP server needed.

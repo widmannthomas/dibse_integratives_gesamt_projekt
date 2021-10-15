@@ -1,5 +1,5 @@
 To answer the questions, we conducted an experiment which is divided into three individual parts.
-The indepentent variables are the three different sleep modes, how the WiFi connection is established (DHCP or static IP) and what transmission protocol is used to send the data (UDP or TCP).
+The indepentent variables are the three different sleep modes, how the Wi-Fi connection is established (DHCP or static IP) and what transmission protocol is used to send the data (UDP or TCP).
 We used DHCP with a random MAC address everytime a connection is established, except when analyzing the behaviour of using a static IP address.\\
 The dependent variables are the current consumption in $mA$ and the energy consumption in $As$. Both of them are ratio scaled.
 We used the ESP8266-01 microcontroller as main device and an FTDI (USB to serial) adapter to program it. 
@@ -7,7 +7,7 @@ For programming, we used the Arduino IDE in version 1.8.16.\\
 When conducting, the impacts of different sleep modes, we used the setup described in Fig. \ref{fig:experiment_deep_sleep} and Fig. \ref{fig:experiment_modem_light_sleep}.\\
 When conducting, the differences of using a static IP instead of DHCP, we used the setup described in Fig. \ref{fig:experiment_static_ip} and Fig. \ref{fig:experiment_deep_sleep}.\\
 When conducting, if there's an impact on energy consumption when using UDP instead of TCP, we used the setup shown in Fig. \ref{fig:tcp_uml} and Fig. \ref{fig:udp_uml}.\\
-During the experiment, the WiFi network operates like a normal network in a private household with several devices connected, so it is an experiment with realistic circumstances.\\
+During the experiment, the Wi-Fi network operates like a normal network in a private household with several devices connected, so it is an experiment with realistic circumstances.\\
 
 To measure the energy consumption, we used an INA219 module which measures the voltage $U_{shunt}$ on a shunt resistor $R_{shunt}$ that is caused by the current $I_{shunt}$ through it.
 The current $I_{shunt}$ can finaly be calculated by the ohm's law:
