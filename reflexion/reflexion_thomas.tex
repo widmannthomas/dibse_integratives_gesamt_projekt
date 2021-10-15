@@ -1,0 +1,28 @@
+\chapter*{Reflection Thomas}
+
+\section*{Introduction}
+During the integrative overall project, my colleges and I dealt with battery powered WiFi sensors. We were a group of three students. Roland Rauter, Arthur Waldner and me. In detail we analysed the energy consumption of WiFi sensors. Furthermore, we worked out different methods to improve the battery life. At the beginning of the project, we came quite quickly to the point that we wanted to do some experiments to analyse if the theory matches the real world. We decided to use an ESP8266 microcontroller because it is cheap and everyone of us had already little experience. 
+
+\section*{Approach}
+Then we asked ourselves what tasks a sensor has to perform and how often the tasks have to be performed. We concluded that the only tasks of a sensor are, to measure some environmental variables, process them and publish them to other devices. I already had some knowledge of IoT devices, as I like tinkering with microcontrollers in my leisure time. Therefore I knew that such sensors perform the mentioned tasks periodically about every 15 - 30min.
+So we asked ourselves how we could reduce power consumption during idle periods. 
+Since I was always working with the ESP8266 in my spare time, I already knew that the chip provides so called sleep modes. But I never analysed their power consumption in detail.
+This brought us to the first question: How do the different sleep modes affect the power consumption?
+I took over this question.\\
+\\
+We then considered how we could optimise the connection to the WLAN network. From previous lectures, we knew that communication in a WLAN takes place via IP and that an IP address is required for this. We also knew that this IP address is usually assigned to the clients via DHCP.
+So we looked at how much energy is needed to request an IP address and whether it is better to use a static address in terms of energy consumption.
+So the second part of this project was, to compare the energy consumption of DHCP and the use of a static IP address.
+This was the part of Roland.\\
+\\
+Last but not least, we analysed how the use of different transport protocols influences the energy consumption. In detail, Arthur measured the energy usage of TCP and UDP. From previous lectures we knew that TCP causes more communication overhead. We thought that this must have an impact on the battery life of the sensor. \\
+\\
+The current status of the project is that we have managed to analyse three different approaches and their effects on the battery life. We found out that the most improvement can be achieved by the use of the deep sleep mode.
+
+
+\section*{Working atmosphere in the group}
+It is worth mentioning that the working atmosphere was very good. Everyone in the group was very motivated and showed great commitment. Overall, I had a lot of fun trying things out and learning about new things. 
+
+\section*{Gained knowledge}
+Performing the experiments and researching about our project was very interesting for me. Doing such detailed analysis on the energy usage of a WiFi capable microcontroller was very worth knowing. I learned a lot about the transmission process of WiFi and how a connection to an access point is kept alive. Furthermore, I gained the knowledge that the ESP8266 is able to automatically reduce the energy consumption when the light sleep mode is used. Furthermore, I gained a lot of knowledge about scientific work and writing papers.
+It is now clear to me that I would like to work in the direction of microcontrollers in my bachelor thesis and apply the methodology of an experiment. 
