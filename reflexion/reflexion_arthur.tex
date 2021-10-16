@@ -1,0 +1,59 @@
+\chapter*{Reflection Arthur}
+
+\section*{Introduction}
+As part of the seminar Integrative Overall Project, Roland Rauter,
+Thomas Widmann and I worked on how to improve the energy efficiency of an ESP8266-01 chip in detail.
+The goal of our investigation was to analyze what makes the data transfer over Wi-Fi
+from an ESP to a server as energy efficient as possible.
+Since we all like to experiment,
+we decided to work out the results ourselves instate of relying on existing data.
+
+
+\section*{Approach}
+Before we started our experiment, I had to buy necessary parts.
+Since I always bought microcontrollers with an integrated USB port and the ESP8266-01
+does not have a USB port. Here I could benefit from Thomas's previous knowledge,
+because unfortunately only the USB-to-TTL converters work with the CH340 chip under MacOS.
+Unfortunately, the converter Thomas used was not available in Italy,
+so we searched for an equivalent adapter. When it arrived,
+I found that the alternative adapter had the correct specification,
+but did not provide enough power to run the ESP with the INA219.
+So I used an external power supply. Now that everything worked out,
+we benefited from the lectures of Prof. Matthias Janetsche, PhD
+to create the test programs and test scenarios. \\
+I focused on the data transfer via UDP and TCP.
+The next step was to send data and gain data for our comparison.
+At the beginning I sent two prepared packets with different sizes via UDP and TCP respectively.
+As I had to find out, the results were not usable,
+because transmission of data is not done immediately after the send command,
+but with a short inconsistent delay.
+Then we decided to send 1000 small packets of one byte,
+sending data with this method has no delay for some reason.\\
+Now,
+when we used the send command, it sends immediately,
+and it was possible to evaluate the data afterwards.
+When all tests were run, and we had the results, it was time for the evaluation.
+As shown in the lecture of Prof. Dr. Pascal Schöttle, we used Python for our analysis.
+A big advantage of using the Python libraries was that we could generate diagrams programmatic
+without other tools. Now we had to write a paper documenting our results.
+Since I have very little experience in scientific work, this was the most difficult part for me.
+Luckily, at the beginning of our project we were shown how to search for scientifically
+relevant sources. I usually searched in forums or on Stack Overflow for answers,
+but i have learned, these are not scientifically reliability sources.
+In the future I will rather use Google Scholar because it works really well and helpful.
+A downside is that not all papers are publicly available.
+
+
+\section*{Working atmosphere in the group}
+Our working atmosphere was very good. Fortunately,
+everyone was very motivated and showed great commitment.
+Because of that were able to create our own results within the short time frame.
+The project was a lot of fun, it is very motivating to try out and learn new things.
+\section*{Gained knowledge}
+In our project I was able to learn many interesting things about sending data over Wi-Fi
+and the energy-saving aspects of microcontrollers.
+Previously I have never dealt with these areas of microcontrollers intensively.
+In addition, I was able to learn a lot about the scientific gathering
+of data and the presentation of results.
+Another advantage was the evaluation of the data using Phyton,
+as this allowed me to deepen what we have learned in the previous lessons.
