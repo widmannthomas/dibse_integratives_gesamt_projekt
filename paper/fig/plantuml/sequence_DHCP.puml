@@ -2,9 +2,9 @@
 start
 
 : powerUp;
-: setStaticIpAddress;
+: setRandomMacAddress;
 note right
-    IP Address stays the same
+    To get a new IP Address every wakeup
 end note
 : connectToAccessPoint;
 : enterDeepSleep;

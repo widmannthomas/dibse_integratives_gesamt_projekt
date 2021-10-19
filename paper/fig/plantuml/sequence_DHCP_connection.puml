@@ -1,0 +1,13 @@
+@startuml
+
+skinparam responseMessageBelowArrow true
+autonumber "<b>[0]"
+client -[#red]>server: DHCPDISCOVERY
+server -[#blue]>client: DHCPOFFER
+client -[#red]>server: DHCPREQUEST
+server -[#blue]>client: DHCPACK
+
+                
+
+
+@enduml
