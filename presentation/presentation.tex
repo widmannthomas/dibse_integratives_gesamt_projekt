@@ -12,6 +12,7 @@
 \usepackage{etoolbox}
 \usepackage{tcolorbox}
 
+
 \date{10. Juli 1732}
 
 \usetheme{Boadilla}
@@ -31,51 +32,54 @@
 
 
 \begin{document}
-    \begin{frame}
-		\titlepage
-	\end{frame}
+\begin{frame}
+    \titlepage
+\end{frame}
 
-    \begin{frame}
-		\frametitle{Welches Thema haben wir bearbeitet?}
-        
-        \begin{itemize}
-            \item Weniger Strom und so
+\begin{frame}
+    \frametitle{Welches Thema haben wir bearbeitet?}
+
+    \begin{itemize}
+        \item Weniger Strom und so
+              \begin{itemize}
+                  \item Implementierung
+                  \item Tests
+              \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Wie lauteten unsere Forschungsfragen?}
+
+    \begin{itemize}
+        \item Ist die Erde rund?
+        \item Warum hat ein Dreieck genau drei Ecken?
+        \item Warum sollen wir das Rad nicht neu erfinden?
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{How to side by side?}
+    \framesubtitle{Fancy subtitle}
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
             \begin{itemize}
-                \item Implementierung
-                \item Tests
+                \item A
+                      \begin{itemize}
+                          \item A1
+                          \item A2
+                      \end{itemize}
             \end{itemize}
-        \end{itemize}
-	\end{frame}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \textit{Lala}
+        \end{column}
+    \end{columns}
+\end{frame}
 
-	\begin{frame}
-        \frametitle{Wie lauteten unsere Forschungsfragen?}
+\input{presentation_roland.tex}
 
-        \begin{itemize}
-            \item Ist die Erde rund?
-            \item Warum hat ein Dreieck genau drei Ecken?
-            \item Warum sollen wir das Rad nicht neu erfinden?
-        \end{itemize}
-	\end{frame}
-
-    \begin{frame}
-        \frametitle{How to side by side?}
-        \framesubtitle{Fancy subtitle}
-
-        \begin{columns}
-            \begin{column}{0.5\textwidth}
-                \begin{itemize}
-                    \item A
-                    \begin{itemize}
-                        \item A1
-                        \item A2
-                    \end{itemize}
-                \end{itemize}
-            \end{column}
-            \begin{column}{0.5\textwidth}
-                \textit{Lala}
-            \end{column}            
-        \end{columns}
-    \end{frame}
 
 
     \input{sleep_modes.tex}
