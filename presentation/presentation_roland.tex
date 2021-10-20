@@ -1,6 +1,6 @@
 \begin{frame}
-    \frametitle{Unterschied zwischen DHCP und einer statischen IP?}
-    \framesubtitle{Im Hinblick auf den Energieverbrauch}
+    \frametitle{Difference between DHCP and static IP}
+    \framesubtitle{In terms of energy consumption}
 
     \begin{columns}
         \begin{column}{0.5\textwidth}
@@ -8,17 +8,18 @@
                 \item DHCP
                       \begin{itemize}
                           \item DHCP Server
-                          \item Dynamische Zuweisung von IP Adressen
-                          \item Lease time
+                          \item IP addresses are allocated dynamically.
+                          \item Lease-time
                       \end{itemize}
             \end{itemize}
         \end{column}
         \begin{column}{0.5\textwidth}
             \begin{itemize}
-                \item Statische IP-Adresse
+                \item Static IP address
                       \begin{itemize}
-                          \item IP Adresse bleibt statisch
-                          \item Vergewissern, dass Adresse verfügbar
+                          \item IP address stays static
+                          \item DHCP server should know about this address
+                          \item Be sure that the address is available
                       \end{itemize}
             \end{itemize}
         \end{column}
@@ -30,9 +31,9 @@
     \begin{columns}
         \begin{column}{0.5\textwidth}
             \begin{itemize}
-                \item 4 Schritte notwendig
-                \item IP Adresse nur "geliehen"
-                \item Lease time-Erneuerung
+                \item 4 steps required
+                \item IP address is leased
+                \item Renewal of the lease-time
 
             \end{itemize}
         \end{column}
@@ -45,26 +46,28 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Experimentdurchlauf: DHCP}
+    \frametitle{Experimental sequence: DHCP}
     \begin{figure}
         \includegraphics[scale=0.6]{../paper/fig/sequence_DHCP.png}
     \end{figure}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Experimentdurchlauf: Statische IP}
+    \frametitle{Experimental sequence: Statische IP}
     \begin{figure}
         \includegraphics[scale=0.6]{../paper/fig/sequence_static_ip.png}
     \end{figure}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Messergebnisse: DHCP}
+    \frametitle{Results: DHCP}
     \begin{columns}
         \begin{column}{0.35\textwidth}
             \begin{itemize}
-                \item $\overline{Dauer}$: $\approx5.5s$
-                \item $\overline{Verbrauch}$: $\approx0.35As$
+                \item $\overline{Duration}$: $\approx5.5s$
+                \item $\overline{Consumption}$: $\approx0.35As$
+                \item Only when the lease-time is expired
+                \item Otherwise, roughly the same as using a static IP
             \end{itemize}
         \end{column}
         \begin{column}{0.65\textwidth}
@@ -76,12 +79,12 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Messergebnisse: Statische IP}
+    \frametitle{Results: Static IP}
     \begin{columns}
         \begin{column}{0.35\textwidth}
             \begin{itemize}
-                \item $\overline{Dauer}$: $\approx4.0s$
-                \item $\overline{Verbrauch}$: $\approx0.28As$
+                \item $\overline{Duration}$: $\approx4.0s$
+                \item $\overline{Consumption}$: $\approx0.28As$
             \end{itemize}
         \end{column}
         \begin{column}{0.65\textwidth}
@@ -93,12 +96,19 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Zusammenfassung}
+    \frametitle{Summary}
 
     \begin{itemize}
-        \item Verwenden einer statischen IP verbraucht $\approx 20.5\%$ weniger Strom
-        \item Verbrauch beim Verwenden von DHCP abhängig von der Lease time
-        \item Verbindungsaufbau über DHCP braucht $\approx 1.5s$ länger
+
+        \item The use of a static IP consumes $\approx 20.5\%$ less power
+        \item Consumption when using DHCP depends on the lease-time
+        \item Establishing the connection takes $\approx 1.5s$ longer when using DHCP and the lease-time is expired
+        \item Example: \begin{itemize}
+                  \item Lease-time = $50min$
+                  \item Every $30min$ reconnect
+                  \item Every second time, a new IP address is needed (Communication with DHCP server)
+                  \item Leads to more power consumption
+              \end{itemize}
     \end{itemize}
 
 
