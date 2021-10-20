@@ -1,0 +1,126 @@
+\begin{frame}
+    \frametitle{UDP / TCP}
+    \framesubtitle{Comparison}
+\centering
+    \begin{minipage}[t]{0.49 \textwidth}
+    	    	        	\textbf{TCP}\linebreak
+    	    	        	 $Transmission Control Protocol$
+    	        \begin{itemize}
+    	        \item connection-oriented protocol
+	    		\item delivery confirmation
+	    		\item retransmission
+	    		\item Error detection
+    			\end{itemize}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width = 1 \linewidth]{fig/UDP_TCP/TCP.png}
+        \end{figure}
+    \end{minipage}
+    \begin{minipage}[t]{0.49 \textwidth}
+    	    	    	        	\textbf{UDP}\linebreak
+    	    	    	        	$User Datagram Protocol$
+    	\begin{itemize} 
+    		\item connectionless protocol
+    		\item lightweight
+    		\item no handshake
+    		\item bulk quantity of packets
+    	\end{itemize}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width = 1 \linewidth]{fig/UDP_TCP/UDP.png}
+        \end{figure}
+        \end{minipage}
+\end{frame}
+
+\begin{frame}
+	\frametitle{UDP / TCP}
+	\framesubtitle{UDP data transmission / Setup}
+	\begin{minipage}[c]{0.60 \textwidth}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width = 0.6 \linewidth]{fig/UDP_TCP/udp_uml.png}
+		\end{figure}
+	\end{minipage}
+	\begin{minipage}[t]{0.30 \textwidth}
+		\vspace{-100pt}
+		\textbf{Experimental setup}
+		\begin{itemize}
+			\item WiFiUdp library
+			\item cycle trigger
+		\end{itemize}
+		        \end{minipage}
+	\end{frame}
+
+\begin{frame}
+	\frametitle{UDP / TCP}
+	\framesubtitle{UDP / Results}
+	\begin{minipage}[c]{0.50 \textwidth}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width = 0.9 \linewidth]{fig/UDP_TCP/udp_s_o.png}
+		\end{figure}
+	\end{minipage}
+	\begin{minipage}[r]{0.40 \textwidth}
+		\vspace{-80pt}
+		\textbf{Results}\linebreak
+		\begin{itemize}
+			\item $96\pm1.10\%ms$
+			\item $0.0091\pm6.38\%As$
+		\end{itemize}
+	\end{minipage}
+\end{frame}
+\begin{frame}
+	\frametitle{UDP / TCP}
+	\framesubtitle{TCP data transmission / Setup}
+	\begin{minipage}[c]{0.60 \textwidth}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width = 0.6 \linewidth]{fig/UDP_TCP/tcp_uml.png}
+		\end{figure}
+	\end{minipage}
+	\begin{minipage}[t]{0.30 \textwidth}
+		\vspace{-100pt}
+		\textbf{Experimental setup}
+		\begin{itemize}
+			\item ESP8266WiFi library
+			\item cycle trigger
+		\end{itemize}
+	\end{minipage}
+\end{frame}
+\begin{frame}
+	\frametitle{UDP / TCP}
+	\framesubtitle{TCP / Results}
+	\begin{minipage}[c]{0.50 \textwidth}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width = 0.9 \linewidth]{fig/UDP_TCP/tcp_s_o.png}
+		\end{figure}
+	\end{minipage}
+	\begin{minipage}[r]{0.40 \textwidth}
+		\vspace{-80pt}
+		\textbf{Measurement}\linebreak
+		\begin{itemize}
+			\item $236\pm13.63\%ms$
+			\item $0.0206 \pm 12.58\%As$
+		\end{itemize}
+	\end{minipage}
+\end{frame}
+\begin{frame}
+	\frametitle{UDP / TCP}
+	\framesubtitle{Comparison / Results}
+	\begin{minipage}[c]{0.60 \textwidth}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width = 0.9 \linewidth]{fig/UDP_TCP/udp_tcp_s_m.png}
+		\end{figure}
+	\end{minipage}
+	\begin{minipage}[r]{0.34 \textwidth}
+		\textbf{Results}\linebreak
+		(for 100 x 1000 Bytes)
+		\begin{itemize}
+			\item UDP requires on average less than $40.68\%$ of the time
+			\item UDP consumes $44.17\%$ less power on average
+			\item using UDP saves almost $\approx 0,0115 mA/ cycle$
+		\end{itemize}
+	\end{minipage}
+\end{frame}
