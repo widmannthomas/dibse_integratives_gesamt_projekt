@@ -3,7 +3,7 @@
 
     \begin{itemize}
 
-        \item Improve energy efficiency on battery powered Wi-Fi sensors
+        \item Improve energy efficiency on battery powered Wi-Fi sensors (ESP8266)
               \begin{itemize}
                   \item Sensor is hard to reach and maintain
                   \item Wi-Fi available in nearly all households
@@ -27,11 +27,20 @@
 
 
 \begin{frame}
-    \frametitle{Research questions}
+    \frametitle{Hypothesis}
 
     \begin{itemize}
-        \item What impact do the different sleep modes of the ESP8266 have?
-        \item Is there a difference when using DHCP or a static IP in power consumption?
-        \item Does using UDP instead of TCP reduce the energy consumption?
+        \item \textit{Does the deep sleep mode improve the energy efficiency?}
+        \begin{itemize}
+            \item \textbf{H0:} The deep sleep has no impact on the power consumption of the system.
+        \end{itemize}
+        \item \textit{Does the usage of a static IP improve the energy efficiency?}
+        \begin{itemize}
+            \item \textbf{H0:} The usage of a static IP instead of DHCP has no impact on the power consumption of the system.
+        \end{itemize}
+        \item \textit{Is there a difference of using UDP instead of TCP?}
+        \begin{itemize}
+            \item \textbf{H0:} Both transport protocols have the same power consumption. 
+        \end{itemize}
     \end{itemize}
 \end{frame}
